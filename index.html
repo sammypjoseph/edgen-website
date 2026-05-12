@@ -1,224 +1,520 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EdGen | Education Generation</title>
-  <meta name="description" content="Education Generation, Powering the Jewish Future. Demo website for federal tax credit scholarships for Jewish K-12 students." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="icon" href="favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="edgen-icon-192.png" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="demo-ribbon">Demo website only. No applications, donations, payments, IVES, or tax verification are active.</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EdGen | Education Generation</title>
+    <meta
+      name="description"
+      content="Education Generation, Powering the Jewish Future. Demo website for federal tax credit scholarships for Jewish K-12 students."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="edgen-icon-192.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="demo-ribbon">
+      Demo website only. No applications, donations, payments, IVES, or tax
+      verification are active.
+    </div>
 
-  <header class="site-header">
-    <a href="#home" class="brand" aria-label="EdGen home">
-      <img class="brand-logo" src="edgen-logo-transparent.png" alt="EdGen, Education Generation, Powering the Jewish Future" />
-      <span class="brand-text">
-        <span class="brand-name">EdGen</span>
-        <span class="brand-full">Education Generation</span>
-        <span class="brand-tag">Powering the Jewish Future</span>
-      </span>
-    </a>
-    <button class="nav-toggle" aria-label="Open navigation">☰</button>
-    <nav class="nav">
-      <a href="#families">For Families</a>
-      <a href="#schools">For Schools</a>
-      <a href="#donors">For Donors</a>
-      <a href="#materials">Information</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a class="nav-apply" href="#apply">Apply Now</a>
-    </nav>
-  </header>
+    <header class="site-header">
+      <a href="#home" class="brand" aria-label="EdGen home">
+        <img
+          class="brand-logo"
+          src="edgen-logo-transparent.png"
+          alt="EdGen, Education Generation, Powering the Jewish Future"
+        />
+        <span class="brand-text">
+          <span class="brand-name">EdGen</span>
+          <span class="brand-full">Education Generation</span>
+          <span class="brand-tag">Powering the Jewish Future</span>
+        </span>
+      </a>
+      <button class="nav-toggle" aria-label="Open navigation">☰</button>
+      <nav class="nav">
+        <a href="#families">For Families</a>
+        <a href="#schools">For Schools</a>
+        <a href="#donors">For Donors</a>
+        <a href="#materials">Information</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-apply" href="#apply">Apply Now</a>
+      </nav>
+    </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow">Federal Scholarship Tax Credit Scholarships</p>
-        <h1>Invest in Students.<br/>Power a Generation.</h1>
-        <p class="hero-subtitle">Federal tax credit scholarships for Jewish K-12 students. Stronger schools. Stronger families. Stronger future.</p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#apply">Click Here to Apply</a>
-          <a class="btn secondary" href="#donors">Make an Impact</a>
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Federal Scholarship Tax Credit Scholarships</p>
+          <h1>Invest in Students.<br />Power a Generation.</h1>
+          <p class="hero-subtitle">
+            Federal tax credit scholarships for Jewish K-12 students. Stronger
+            schools. Stronger families. Stronger future.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#apply">Click Here to Apply</a>
+            <a class="btn secondary" href="#donors">Make an Impact</a>
+          </div>
+          <p class="notice">
+            <span>ⓘ</span> The Federal Scholarship Tax Credit program is new and
+            subject to federal law, state participation, and IRS/Treasury
+            guidance.
+          </p>
         </div>
-        <p class="notice"><span>ⓘ</span> The Federal Scholarship Tax Credit program is new and subject to federal law, state participation, and IRS/Treasury guidance.</p>
-      </div>
-      <div class="hero-images" aria-label="Student images">
-        <figure class="student-card boys">
-          <picture>
-            <source srcset="edgen-boys-square.webp" media="(max-width: 620px)">
-            <img src="edgen-boys.webp" alt="Jewish school boys walking outside school" />
-          </picture>
-          <figcaption>Boys Division</figcaption>
-        </figure>
-        <figure class="student-card girls">
-          <picture>
-            <source srcset="edgen-girls-square.webp" media="(max-width: 620px)">
-            <img src="edgen-girls.webp" alt="Jewish school girls walking outside school" />
-          </picture>
-          <figcaption>Girls Division</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="quick-links">
-      <a href="#families"><span>👨‍👩‍👧‍👦</span><strong>For Families</strong><small>Apply for scholarships for K-12 education expenses.</small></a>
-      <a href="#schools"><span>🏫</span><strong>For Schools</strong><small>Partner with us to support eligible students.</small></a>
-      <a href="#donors"><span>💛</span><strong>For Donors</strong><small>Get a federal tax credit while changing lives.</small></a>
-      <a href="#materials"><span>📄</span><strong>Information</strong><small>Learn how the program works and who qualifies.</small></a>
-    </section>
-
-    <section class="section split">
-      <div>
-        <h2>Three Simple Steps</h2>
-        <div class="steps">
-          <article><b>1</b><h3>Families Apply</h3><p>Parents submit a demo application with household, school, student, and income information.</p></article>
-          <article><b>2</b><h3>Eligibility Is Verified</h3><p>Eligibility logic is displayed for demo purposes. IVES integration is shown as a placeholder only.</p></article>
-          <article><b>3</b><h3>Scholarships Are Awarded</h3><p>Scholarships are awarded based on funding, program rules, and final government guidance.</p></article>
+        <div class="hero-images" aria-label="Student images">
+          <figure class="student-card boys">
+            <picture>
+              <source
+                srcset="edgen-boys-square.webp"
+                media="(max-width: 620px)"
+              />
+              <img
+                src="edgen-boys.webp"
+                alt="Jewish school boys walking outside school"
+              />
+            </picture>
+            <figcaption>Boys Division</figcaption>
+          </figure>
+          <figure class="student-card girls">
+            <picture>
+              <source
+                srcset="edgen-girls-square.webp"
+                media="(max-width: 620px)"
+              />
+              <img
+                src="edgen-girls.webp"
+                alt="Jewish school girls walking outside school"
+              />
+            </picture>
+            <figcaption>Girls Division</figcaption>
+          </figure>
         </div>
-      </div>
-      <aside class="donation-card" id="donors">
-        <h2>Make a Difference Today</h2>
-        <p>Your contribution helps provide scholarships for eligible students.</p>
-        <div class="amounts">
-          <button type="button" data-amount="1700">$1,700</button>
-          <button type="button" data-amount="3400">$3,400</button>
-          <button type="button" data-amount="other">Other</button>
+      </section>
+
+      <section class="quick-links">
+        <a href="#families"
+          ><span>👨‍👩‍👧‍👦</span><strong>For Families</strong
+          ><small>Apply for scholarships for K-12 education expenses.</small></a
+        >
+        <a href="#schools"
+          ><span>🏫</span><strong>For Schools</strong
+          ><small>Partner with us to support eligible students.</small></a
+        >
+        <a href="#donors"
+          ><span>💛</span><strong>For Donors</strong
+          ><small>Get a federal tax credit while changing lives.</small></a
+        >
+        <a href="#materials"
+          ><span>📄</span><strong>Information</strong
+          ><small>Learn how the program works and who qualifies.</small></a
+        >
+      </section>
+
+      <section class="section split">
+        <div>
+          <h2>Three Simple Steps</h2>
+          <div class="steps">
+            <article>
+              <b>1</b>
+              <h3>Families Apply</h3>
+              <p>
+                Parents submit a demo application with household, school,
+                student, and income information.
+              </p>
+            </article>
+            <article>
+              <b>2</b>
+              <h3>Eligibility Is Verified</h3>
+              <p>
+                Eligibility logic is displayed for demo purposes. IVES
+                integration is shown as a placeholder only.
+              </p>
+            </article>
+            <article>
+              <b>3</b>
+              <h3>Scholarships Are Awarded</h3>
+              <p>
+                Scholarships are awarded based on funding, program rules, and
+                final government guidance.
+              </p>
+            </article>
+          </div>
         </div>
-        <p class="fine-print">$3,400 applies to married taxpayers filing jointly. All contributions are subject to program rules and require formal approval within the guidelines set by Treasury/IRS.</p>
-        <form class="demo-form" id="donationForm">
-          <input type="text" placeholder="Your Name" />
-          <input type="email" placeholder="Email Address" />
-          <input type="text" placeholder="Designation, optional" />
-          <input type="number" placeholder="Other amount" class="other-amount" hidden />
-          <button type="submit" class="btn primary full">Continue, Demo Only</button>
+        <aside class="donation-card" id="donors">
+          <h2>Make a Difference Today</h2>
+          <p>
+            Your contribution helps provide scholarships for eligible students.
+          </p>
+          <div class="amounts">
+            <button type="button" data-amount="1700">$1,700</button>
+            <button type="button" data-amount="3400">$3,400</button>
+            <button type="button" data-amount="other">Other</button>
+          </div>
+          <p class="fine-print">
+            $3,400 applies to married taxpayers filing jointly. All
+            contributions are subject to program rules and require formal
+            approval within the guidelines set by Treasury/IRS.
+          </p>
+          <form class="demo-form" id="donationForm">
+            <input type="text" placeholder="Your Name" />
+            <input type="email" placeholder="Email Address" />
+            <input type="text" placeholder="Designation, optional" />
+            <input
+              type="number"
+              placeholder="Other amount"
+              class="other-amount"
+              hidden
+            />
+            <button type="submit" class="btn primary full">
+              Continue, Demo Only
+            </button>
+          </form>
+          <p class="demo-note">This is a demo. No payment will be processed.</p>
+        </aside>
+      </section>
+
+      <section class="section" id="families">
+        <div class="section-head">
+          <p class="eyebrow">For Families</p>
+          <h2>Scholarship support for eligible K-12 students</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Who may qualify?</h3>
+            <p>
+              Eligibility is expected to include household income, family size,
+              public school enrollment eligibility, state participation, and
+              other program rules.
+            </p>
+          </article>
+          <article class="card">
+            <h3>What can scholarships cover?</h3>
+            <p>
+              Qualified K-12 education expenses may include tuition, fees,
+              books, supplies, and other approved education expenses, subject to
+              final guidance.
+            </p>
+          </article>
+          <article class="card">
+            <h3>What should families prepare?</h3>
+            <p>
+              Student information, school information, household size,
+              prior-year income, and authorization for income verification.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section muted" id="schools">
+        <div class="section-head">
+          <p class="eyebrow">For Schools</p>
+          <h2>Partnering with schools to serve families</h2>
+        </div>
+        <div class="grid-2">
+          <article class="card">
+            <h3>School participation</h3>
+            <p>
+              Participating schools may submit school profiles, tuition
+              schedules, contact information, grade ranges, and enrollment
+              verification processes.
+            </p>
+          </article>
+          <article class="card">
+            <h3>School database placeholder</h3>
+            <p>
+              The live version should include a searchable database of Jewish
+              schools in opted-in states, with legal review regarding residency
+              and school-location rules.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="apply">
+        <div class="section-head">
+          <p class="eyebrow">Demo Application</p>
+          <h2>Scholarship Application Preview</h2>
+          <p>
+            This form is a non-active demo. It does not submit, store, verify,
+            or transmit personal information.
+          </p>
+        </div>
+        <form class="application-form" id="applicationForm">
+          <fieldset>
+            <legend>Parent / Guardian Information</legend>
+            <div class="form-grid">
+              <input placeholder="Parent/Guardian Full Name" />
+              <input placeholder="Email Address" type="email" />
+              <input placeholder="Phone" />
+              <input placeholder="Home Address" />
+              <select>
+                <option>Parent Home State</option>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arkansas</option>
+                <option>Colorado</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Idaho</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Louisiana</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Virginia</option>
+                <option>West Virginia</option>
+                <option>Wyoming</option>
+                <option>Other / Not listed</option>
+              </select>
+              <select>
+                <option>Tax Filing Status</option>
+                <option>Single</option>
+                <option>Married Filing Jointly</option>
+                <option>Married Filing Separately</option>
+                <option>Head of Household</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Student Information</legend>
+            <div class="form-grid">
+              <input placeholder="Student Full Name" />
+              <input type="date" aria-label="Student date of birth" />
+              <select>
+                <option>Current school year 2026-2027 grade</option>
+                <option>Nursery</option>
+                <option>Pre-K</option>
+                <option>Kindergarten</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+              </select>
+              <select>
+                <option>Applying for 2027-2028 grade</option>
+                <option>Kindergarten</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+              <input
+                list="schoolList"
+                placeholder="School attending in 2027-2028"
+              />
+              <datalist id="schoolList">
+                <option value="School not listed"></option>
+                <option value="Undecided"></option>
+                <option
+                  value="Participating school database placeholder"
+                ></option>
+              </datalist>
+              <select>
+                <option>School State</option>
+                <option>Alabama</option>
+                <option>Alaska</option>
+                <option>Arkansas</option>
+                <option>Colorado</option>
+                <option>Florida</option>
+                <option>Georgia</option>
+                <option>Idaho</option>
+                <option>Indiana</option>
+                <option>Iowa</option>
+                <option>Louisiana</option>
+                <option>Mississippi</option>
+                <option>Missouri</option>
+                <option>Montana</option>
+                <option>Nebraska</option>
+                <option>Nevada</option>
+                <option>New Hampshire</option>
+                <option>North Dakota</option>
+                <option>Ohio</option>
+                <option>Oklahoma</option>
+                <option>South Carolina</option>
+                <option>South Dakota</option>
+                <option>Tennessee</option>
+                <option>Texas</option>
+                <option>Utah</option>
+                <option>Virginia</option>
+                <option>West Virginia</option>
+                <option>Wyoming</option>
+                <option>Other / Not listed</option>
+              </select>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Income & IVES Placeholder</legend>
+            <div class="form-grid">
+              <input placeholder="Prior-year household income" />
+              <input placeholder="Household size" type="number" />
+              <select>
+                <option>Tax year to verify</option>
+                <option>2026</option>
+                <option>2027</option>
+              </select>
+              <select>
+                <option>IVES status</option>
+                <option>Not connected, demo placeholder</option>
+              </select>
+            </div>
+            <label class="checkbox"
+              ><input type="checkbox" /> I understand that IVES/tax transcript
+              verification is not active in this demo and would require secure
+              taxpayer consent and vendor/IRS integration.</label
+            >
+            <label class="checkbox"
+              ><input type="checkbox" /> I understand Treasury/IRS still must
+              clarify certain eligibility issues, including parent residence vs.
+              school location scenarios.</label
+            >
+          </fieldset>
+          <button class="btn primary" type="submit">
+            Submit Demo Application
+          </button>
+          <p class="demo-note">
+            Demo only. No information is transmitted or stored.
+          </p>
         </form>
-        <p class="demo-note">This is a demo. No payment will be processed.</p>
-      </aside>
-    </section>
+      </section>
 
-    <section class="section" id="families">
-      <div class="section-head">
-        <p class="eyebrow">For Families</p>
-        <h2>Scholarship support for eligible K-12 students</h2>
-      </div>
-      <div class="grid-3">
-        <article class="card"><h3>Who may qualify?</h3><p>Eligibility is expected to include household income, family size, public school enrollment eligibility, state participation, and other program rules.</p></article>
-        <article class="card"><h3>What can scholarships cover?</h3><p>Qualified K-12 education expenses may include tuition, fees, books, supplies, and other approved education expenses, subject to final guidance.</p></article>
-        <article class="card"><h3>What should families prepare?</h3><p>Student information, school information, household size, prior-year income, and authorization for income verification.</p></article>
-      </div>
-    </section>
+      <section class="section muted" id="materials">
+        <div class="section-head">
+          <p class="eyebrow">Information Center</p>
+          <h2>Resources and downloads</h2>
+        </div>
+        <div class="grid-3">
+          <article class="card">
+            <h3>One-Page Overview</h3>
+            <p>A concise overview for families, schools, and donors.</p>
+            <button class="link-button">Preview Demo</button>
+          </article>
+          <article class="card">
+            <h3>Longer FAQ</h3>
+            <p>
+              Detailed program questions, eligibility notes, and pending
+              guidance items.
+            </p>
+            <button class="link-button">Preview Demo</button>
+          </article>
+          <article class="card">
+            <h3>School Packet</h3>
+            <p>Participation checklist, data fields, and onboarding steps.</p>
+            <button class="link-button">Preview Demo</button>
+          </article>
+        </div>
+      </section>
 
-    <section class="section muted" id="schools">
-      <div class="section-head">
-        <p class="eyebrow">For Schools</p>
-        <h2>Partnering with schools to serve families</h2>
-      </div>
-      <div class="grid-2">
-        <article class="card"><h3>School participation</h3><p>Participating schools may submit school profiles, tuition schedules, contact information, grade ranges, and enrollment verification processes.</p></article>
-        <article class="card"><h3>School database placeholder</h3><p>The live version should include a searchable database of Jewish schools in opted-in states, with legal review regarding residency and school-location rules.</p></article>
-      </div>
-    </section>
+      <section class="section" id="faq">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>Is this website live?</summary>
+            <p>
+              No. This is a demo website only. Forms, donations, payment
+              processing, document upload, and IVES are not active.
+            </p>
+          </details>
+          <details>
+            <summary>Can a donor designate a specific child?</summary>
+            <p>
+              No. The production site should clearly state that contributions
+              cannot be earmarked for a particular student.
+            </p>
+          </details>
+          <details>
+            <summary>
+              What if the family lives in an opt-out state but the school is in
+              an opt-in state?
+            </summary>
+            <p>
+              This is flagged as a pending guidance issue. The site should not
+              make a final eligibility promise until Treasury/IRS clarifies the
+              rule.
+            </p>
+          </details>
+          <details>
+            <summary>What does $3,400 mean?</summary>
+            <p>
+              It refers to married taxpayers filing jointly. It still requires
+              formal approval within final Treasury/IRS rules and should be
+              reviewed before accepting real contributions.
+            </p>
+          </details>
+        </div>
+      </section>
 
-    <section class="section" id="apply">
-      <div class="section-head">
-        <p class="eyebrow">Demo Application</p>
-        <h2>Scholarship Application Preview</h2>
-        <p>This form is a non-active demo. It does not submit, store, verify, or transmit personal information.</p>
-      </div>
-      <form class="application-form" id="applicationForm">
-        <fieldset>
-          <legend>Parent / Guardian Information</legend>
-          <div class="form-grid">
-            <input placeholder="Parent/Guardian Full Name" />
-            <input placeholder="Email Address" type="email" />
-            <input placeholder="Phone" />
-            <input placeholder="Home Address" />
-            <select><option>Parent Home State</option><option>Alabama</option><option>Alaska</option><option>Arkansas</option><option>Colorado</option><option>Florida</option><option>Georgia</option><option>Idaho</option><option>Indiana</option><option>Iowa</option><option>Louisiana</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Virginia</option><option>West Virginia</option><option>Wyoming</option><option>Other / Not listed</option></select>
-            <select><option>Tax Filing Status</option><option>Single</option><option>Married Filing Jointly</option><option>Married Filing Separately</option><option>Head of Household</option></select>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Student Information</legend>
-          <div class="form-grid">
-            <input placeholder="Student Full Name" />
-            <input type="date" aria-label="Student date of birth" />
-            <select><option>Current school year 2026-2027 grade</option><option>Nursery</option><option>Pre-K</option><option>Kindergarten</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option></select>
-            <select><option>Applying for 2027-2028 grade</option><option>Kindergarten</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option></select>
-            <input list="schoolList" placeholder="School attending in 2027-2028" />
-            <datalist id="schoolList"><option value="School not listed"><option value="Undecided"><option value="Participating school database placeholder"></datalist>
-            <select><option>School State</option><option>Alabama</option><option>Alaska</option><option>Arkansas</option><option>Colorado</option><option>Florida</option><option>Georgia</option><option>Idaho</option><option>Indiana</option><option>Iowa</option><option>Louisiana</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Virginia</option><option>West Virginia</option><option>Wyoming</option><option>Other / Not listed</option></select>
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend>Income & IVES Placeholder</legend>
-          <div class="form-grid">
-            <input placeholder="Prior-year household income" />
-            <input placeholder="Household size" type="number" />
-            <select><option>Tax year to verify</option><option>2026</option><option>2027</option></select>
-            <select><option>IVES status</option><option>Not connected, demo placeholder</option></select>
-          </div>
-          <label class="checkbox"><input type="checkbox" /> I understand that IVES/tax transcript verification is not active in this demo and would require secure taxpayer consent and vendor/IRS integration.</label>
-          <label class="checkbox"><input type="checkbox" /> I understand Treasury/IRS still must clarify certain eligibility issues, including parent residence vs. school location scenarios.</label>
-        </fieldset>
-        <button class="btn primary" type="submit">Submit Demo Application</button>
-        <p class="demo-note">Demo only. No information is transmitted or stored.</p>
-      </form>
-    </section>
+      <section class="section contact" id="contact">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Questions?</h2>
+          <p>
+            Use this placeholder form for demo purposes. In production, connect
+            this to a secure CRM or email workflow.
+          </p>
+        </div>
+        <form class="demo-form" id="contactForm">
+          <input placeholder="Name" />
+          <input placeholder="Email" type="email" />
+          <select>
+            <option>I am a...</option>
+            <option>Parent</option>
+            <option>School</option>
+            <option>Donor</option>
+            <option>Other</option>
+          </select>
+          <textarea placeholder="Message"></textarea>
+          <button class="btn primary" type="submit">Send Demo Message</button>
+        </form>
+      </section>
+    </main>
 
-    <section class="section muted" id="materials">
-      <div class="section-head">
-        <p class="eyebrow">Information Center</p>
-        <h2>Resources and downloads</h2>
-      </div>
-      <div class="grid-3">
-        <article class="card"><h3>One-Page Overview</h3><p>A concise overview for families, schools, and donors.</p><button class="link-button">Preview Demo</button></article>
-        <article class="card"><h3>Longer FAQ</h3><p>Detailed program questions, eligibility notes, and pending guidance items.</p><button class="link-button">Preview Demo</button></article>
-        <article class="card"><h3>School Packet</h3><p>Participation checklist, data fields, and onboarding steps.</p><button class="link-button">Preview Demo</button></article>
-      </div>
-    </section>
+    <footer>
+      <div class="footer-brand">EdGen <span>Education Generation</span></div>
+      <p>Powering the Jewish Future</p>
+      <p class="fine-print">
+        Demo website only. This website does not provide legal, tax, accounting,
+        or program eligibility advice.
+      </p>
+    </footer>
 
-    <section class="section" id="faq">
-      <div class="section-head">
-        <p class="eyebrow">FAQ</p>
-        <h2>Frequently Asked Questions</h2>
-      </div>
-      <div class="faq-list">
-        <details open><summary>Is this website live?</summary><p>No. This is a demo website only. Forms, donations, payment processing, document upload, and IVES are not active.</p></details>
-        <details><summary>Can a donor designate a specific child?</summary><p>No. The production site should clearly state that contributions cannot be earmarked for a particular student.</p></details>
-        <details><summary>What if the family lives in an opt-out state but the school is in an opt-in state?</summary><p>This is flagged as a pending guidance issue. The site should not make a final eligibility promise until Treasury/IRS clarifies the rule.</p></details>
-        <details><summary>What does $3,400 mean?</summary><p>It refers to married taxpayers filing jointly. It still requires formal approval within final Treasury/IRS rules and should be reviewed before accepting real contributions.</p></details>
-      </div>
-    </section>
-
-    <section class="section contact" id="contact">
-      <div>
-        <p class="eyebrow">Contact</p>
-        <h2>Questions?</h2>
-        <p>Use this placeholder form for demo purposes. In production, connect this to a secure CRM or email workflow.</p>
-      </div>
-      <form class="demo-form" id="contactForm">
-        <input placeholder="Name" />
-        <input placeholder="Email" type="email" />
-        <select><option>I am a...</option><option>Parent</option><option>School</option><option>Donor</option><option>Other</option></select>
-        <textarea placeholder="Message"></textarea>
-        <button class="btn primary" type="submit">Send Demo Message</button>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-brand">EdGen <span>Education Generation</span></div>
-    <p>Powering the Jewish Future</p>
-    <p class="fine-print">Demo website only. This website does not provide legal, tax, accounting, or program eligibility advice.</p>
-  </footer>
-
-  <div class="toast" id="toast">Demo only. Nothing was submitted.</div>
-  <script src="script.js"></script>
-</body>
+    <div class="toast" id="toast">Demo only. Nothing was submitted.</div>
+    <script src="script.js"></script>
+  </body>
 </html>
