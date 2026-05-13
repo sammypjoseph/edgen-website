@@ -931,3 +931,22 @@ footer {
 @media (max-width: 620px) {
   .endorsement-grid { grid-template-columns: 1fr; }
 }
+.site-header .brand {
+  display: flex !important;
+  align-items: center !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.site-header .brand-logo {
+  width: 260px !important;
+  max-width: 260px !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.site-header .brand-text {
+  display: none !important;
+}
