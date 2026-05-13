@@ -79,10 +79,10 @@ textarea {
 }
 
 .brand-logo {
-  width: 250px;
-  max-width: 34vw;
+  width: 235px;
   height: auto;
   display: block;
+  object-fit: contain;
 }
 
 .brand-text {
