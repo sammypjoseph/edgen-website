@@ -300,41 +300,19 @@ textarea {
   position: relative;
   overflow: hidden;
   border-radius: 22px;
-  background: #fff;
+  background: transparent;
   box-shadow: 0 18px 45px rgba(0,0,0,0.12);
-}
-
-.student-card.girls {
-  margin-top: 54px;
-}
-
-.student-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 48%, rgba(7, 31, 79, 0.42));
-  z-index: 1;
+  height: 430px;
 }
 
 .student-card picture,
 .student-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  display: block;
-  border-radius: 22px;
-}
-
-.student-card img {
-  position: absolute;
-  inset: 0;
+  height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform 0.7s ease;
-}
-
-.student-card:hover img {
-  transform: scale(1.035);
+  display: block;
+  border-radius: 22px;
 }
 
 .student-card figcaption {
