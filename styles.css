@@ -899,3 +899,58 @@ footer {
     transition-duration: 0.001ms !important;
   }
 }
+.admin-zero {
+  background: linear-gradient(135deg, #00205B 0%, #0038B8 100%);
+  color: #fff;
+  padding: 54px 0;
+}
+.admin-zero-inner {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.admin-zero-badge {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  border: 4px solid #F2A900;
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  font-weight: 900;
+  color: #F2A900;
+  background: rgba(255,255,255,.06);
+}
+.admin-zero h2, .endorsements h2 { margin: 0 0 12px; }
+.admin-zero p { margin: 0; max-width: 860px; }
+.endorsements { padding: 70px 0; background: #fff; }
+.endorsement-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+.endorsement-card {
+  border: 1px solid rgba(0,32,91,.12);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 16px 40px rgba(0,32,91,.08);
+  background: linear-gradient(180deg, #fff, #f8fbff);
+}
+.org-logo-text {
+  min-height: 62px;
+  color: #0038B8;
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 18px;
+}
+.endorsement-card a { color: #0038B8; font-weight: 800; text-decoration: none; }
+@media (max-width: 900px) {
+  .admin-zero-inner { grid-template-columns: 1fr; }
+  .endorsement-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 620px) {
+  .endorsement-grid { grid-template-columns: 1fr; }
+}
