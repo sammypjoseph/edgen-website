@@ -287,6 +287,7 @@
 </section>
       
 <!-- EdGen 2026 300% AMI Map Section: paste below the downloads section and above endorsements -->
+<!-- EdGen 2026 300% AMI Map Section: paste below Downloads and above Endorsements -->
 <section class="edgen-ami-map-section" id="ami-map">
   <div class="container">
     <div class="edgen-ami-map-header">
@@ -294,7 +295,7 @@
         <p class="platform-kicker">2026 Eligibility Planning Tool</p>
         <h2>FSTC 300% AMI eligibility by county.</h2>
         <p class="edgen-ami-map-intro">
-          Hover over any county to view the estimated 300% AMI scholarship eligibility threshold using HUD’s 2026 income data.
+          Hover over any county, or search by county and state, to view the estimated 300% AMI scholarship eligibility threshold using HUD’s 2026 income data.
         </p>
       </div>
       <div class="edgen-ami-map-source-card">
@@ -306,19 +307,20 @@
 
     <div class="edgen-ami-map-toolbar">
       <label for="edgenCountySearch">Find a county</label>
-      <input id="edgenCountySearch" type="search" placeholder="Search county or state..." autocomplete="off" />
+      <input id="edgenCountySearch" type="search" list="edgenCountyOptions" placeholder="Example: Nassau County, NY" autocomplete="off" />
+      <datalist id="edgenCountyOptions"></datalist>
       <div class="edgen-ami-map-legend" id="edgenAmiMapLegend" aria-label="Map color legend"></div>
     </div>
 
     <div class="edgen-ami-map-layout">
       <div class="edgen-ami-map-wrap">
-        <svg id="edgenAmiMap" viewBox="0 0 975 610" role="img" aria-label="United States map showing 300% AMI thresholds by county"></svg>
+        <svg id="edgenAmiMap" viewBox="0 0 975 610" preserveAspectRatio="xMidYMid meet" role="img" aria-label="United States map showing 300% AMI thresholds by county"></svg>
         <div class="edgen-ami-map-tooltip" id="edgenAmiMapTooltip" role="status" aria-live="polite"></div>
       </div>
       <aside class="edgen-ami-map-info" id="edgenAmiMapInfo">
         <p class="mini-eyebrow">Hover or search</p>
         <h3>Select a county</h3>
-        <p>Move your mouse over the map to see the 2026 300% AMI planning threshold for that county.</p>
+        <p>Move your mouse over the map, or type a county and state like “Nassau County, NY.”</p>
       </aside>
     </div>
 
@@ -328,6 +330,7 @@
     </p>
   </div>
 </section>
+
       
 <section class="endorsements" id="endorsements">
   <div class="container">
