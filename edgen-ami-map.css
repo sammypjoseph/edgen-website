@@ -1,0 +1,293 @@
+/* EdGen 2026 300% AMI county map */
+.edgen-ami-map-section {
+  padding: 92px 0;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(0, 56, 184, 0.10), transparent 30rem),
+    radial-gradient(circle at 90% 15%, rgba(255, 194, 14, 0.18), transparent 24rem),
+    linear-gradient(180deg, #ffffff 0%, #f6f9ff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.edgen-ami-map-header {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 34px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+
+.edgen-ami-map-header h2 {
+  color: #071f4f;
+  font-size: clamp(2rem, 4vw, 3.35rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0 0 18px;
+}
+
+.edgen-ami-map-intro {
+  max-width: 760px;
+  color: #38506f;
+  font-size: 1.14rem;
+  line-height: 1.72;
+  margin: 0;
+}
+
+.edgen-ami-map-source-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 56, 184, 0.14);
+  border-radius: 24px;
+  padding: 20px 22px;
+  box-shadow: 0 18px 45px rgba(7, 31, 79, 0.08);
+}
+
+.edgen-ami-map-source-card strong,
+.edgen-ami-map-source-card span,
+.edgen-ami-map-source-card small {
+  display: block;
+}
+
+.edgen-ami-map-source-card strong {
+  color: #071f4f;
+  font-size: 1.05rem;
+  margin-bottom: 7px;
+}
+
+.edgen-ami-map-source-card span {
+  color: #38506f;
+  line-height: 1.45;
+}
+
+.edgen-ami-map-source-card small {
+  color: #0038B8;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+.edgen-ami-map-toolbar {
+  display: grid;
+  grid-template-columns: 120px minmax(220px, 390px) 1fr;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.edgen-ami-map-toolbar label {
+  color: #071f4f;
+  font-weight: 900;
+}
+
+.edgen-ami-map-toolbar input {
+  width: 100%;
+  border: 1px solid rgba(0, 56, 184, 0.18);
+  background: #ffffff;
+  color: #071f4f;
+  border-radius: 999px;
+  padding: 13px 18px;
+  font-size: 1rem;
+  box-shadow: 0 8px 20px rgba(7, 31, 79, 0.06);
+  outline: none;
+}
+
+.edgen-ami-map-toolbar input:focus {
+  border-color: #0038B8;
+  box-shadow: 0 0 0 4px rgba(0, 56, 184, 0.12);
+}
+
+.edgen-ami-map-legend {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.edgen-ami-map-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #526782;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.edgen-ami-map-legend i {
+  width: 20px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+  border: 1px solid rgba(7, 31, 79, 0.12);
+}
+
+.edgen-ami-map-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.edgen-ami-map-wrap {
+  position: relative;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(0, 56, 184, 0.14);
+  border-radius: 32px;
+  padding: 18px;
+  min-height: 520px;
+  box-shadow: 0 24px 70px rgba(7, 31, 79, 0.10);
+  overflow: hidden;
+}
+
+#edgenAmiMap {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  display: block;
+}
+
+.edgen-county {
+  stroke: rgba(255, 255, 255, 0.86);
+  stroke-width: 0.35;
+  transition: fill 0.16s ease, opacity 0.16s ease;
+  cursor: pointer;
+}
+
+.edgen-county:hover,
+.edgen-county.is-active {
+  stroke: #071f4f;
+  stroke-width: 1.2;
+  filter: drop-shadow(0 2px 4px rgba(7, 31, 79, 0.25));
+}
+
+.edgen-state-boundary {
+  fill: none;
+  stroke: rgba(7, 31, 79, 0.35);
+  stroke-width: 0.75;
+  pointer-events: none;
+}
+
+.edgen-ami-map-tooltip {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -115%);
+  min-width: 210px;
+  background: #071f4f;
+  color: #ffffff;
+  border-radius: 18px;
+  padding: 13px 15px;
+  box-shadow: 0 18px 45px rgba(7, 31, 79, 0.25);
+  z-index: 3;
+  transition: opacity 0.12s ease;
+}
+
+.edgen-ami-map-tooltip strong {
+  display: block;
+  font-size: 0.98rem;
+  margin-bottom: 5px;
+}
+
+.edgen-ami-map-tooltip span {
+  color: rgba(255, 255, 255, 0.86);
+  font-weight: 700;
+}
+
+.edgen-ami-map-info {
+  background: linear-gradient(180deg, #071f4f 0%, #0038B8 100%);
+  color: #ffffff;
+  border-radius: 32px;
+  padding: 30px;
+  box-shadow: 0 24px 70px rgba(7, 31, 79, 0.16);
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.edgen-ami-map-info .mini-eyebrow {
+  color: #FFC20E;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.76rem;
+  font-weight: 900;
+  margin: 0 0 12px;
+}
+
+.edgen-ami-map-info h3 {
+  font-size: 1.8rem;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.edgen-ami-map-info p {
+  color: rgba(255, 255, 255, 0.86);
+  line-height: 1.65;
+  margin: 0 0 14px;
+}
+
+.edgen-ami-map-info .threshold {
+  margin: 20px 0;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.20);
+  border-radius: 24px;
+  padding: 20px;
+}
+
+.edgen-ami-map-info .threshold span {
+  display: block;
+  color: #FFC20E;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+}
+
+.edgen-ami-map-info .threshold strong {
+  display: block;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+
+.edgen-ami-map-info ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.edgen-ami-map-disclaimer {
+  margin: 18px 0 0;
+  color: #526782;
+  line-height: 1.62;
+  font-size: 0.94rem;
+}
+
+@media (max-width: 1050px) {
+  .edgen-ami-map-header,
+  .edgen-ami-map-layout,
+  .edgen-ami-map-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .edgen-ami-map-legend {
+    justify-content: flex-start;
+  }
+
+  .edgen-ami-map-info,
+  .edgen-ami-map-wrap {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .edgen-ami-map-section {
+    padding: 58px 0;
+  }
+
+  .edgen-ami-map-wrap {
+    border-radius: 22px;
+    padding: 10px;
+  }
+
+  #edgenAmiMap {
+    min-height: 350px;
+  }
+}
