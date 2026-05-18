@@ -14,9 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="edgen-icon-192.png" />
-    <link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="edgen-icon-192.png" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="edgen-ami-map.css" />
   </head>
   <body>
     <div class="demo-ribbon">
@@ -282,6 +283,49 @@
         <small>Talking points for rabbanim, boards, and communal leaders.</small>
       </a>
     </div>
+  </div>
+</section>
+      
+<!-- EdGen 2026 300% AMI Map Section: paste below the downloads section and above endorsements -->
+<section class="edgen-ami-map-section" id="ami-map">
+  <div class="container">
+    <div class="edgen-ami-map-header">
+      <div>
+        <p class="platform-kicker">2026 Eligibility Planning Tool</p>
+        <h2>FSTC 300% AMI eligibility by county.</h2>
+        <p class="edgen-ami-map-intro">
+          Hover over any county to view the estimated 300% AMI scholarship eligibility threshold using HUD’s 2026 income data.
+        </p>
+      </div>
+      <div class="edgen-ami-map-source-card">
+        <strong>Data source</strong>
+        <span>HUD FY 2026 Section 8 Income Limits</span>
+        <small>Effective May 1, 2026</small>
+      </div>
+    </div>
+
+    <div class="edgen-ami-map-toolbar">
+      <label for="edgenCountySearch">Find a county</label>
+      <input id="edgenCountySearch" type="search" placeholder="Search county or state..." autocomplete="off" />
+      <div class="edgen-ami-map-legend" id="edgenAmiMapLegend" aria-label="Map color legend"></div>
+    </div>
+
+    <div class="edgen-ami-map-layout">
+      <div class="edgen-ami-map-wrap">
+        <svg id="edgenAmiMap" viewBox="0 0 975 610" role="img" aria-label="United States map showing 300% AMI thresholds by county"></svg>
+        <div class="edgen-ami-map-tooltip" id="edgenAmiMapTooltip" role="status" aria-live="polite"></div>
+      </div>
+      <aside class="edgen-ami-map-info" id="edgenAmiMapInfo">
+        <p class="mini-eyebrow">Hover or search</p>
+        <h3>Select a county</h3>
+        <p>Move your mouse over the map to see the 2026 300% AMI planning threshold for that county.</p>
+      </aside>
+    </div>
+
+    <p class="edgen-ami-map-disclaimer">
+      This tool is for informational planning purposes only. Final FSTC scholarship eligibility will depend on federal law,
+      IRS/Treasury guidance, SGO review, income verification, state participation, and final program rules.
+    </p>
   </div>
 </section>
       
@@ -735,5 +779,8 @@
 
     <div class="toast" id="toast">Demo only. Nothing was submitted.</div>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+<script src="edgen-ami-map.js"></script>
   </body>
 </html>
