@@ -1227,7 +1227,9 @@ p { line-height: 1.7; }
   padding-bottom: clamp(48px, 5vw, 72px);
 }
 .footer-brand-col { display: flex; flex-direction: column; gap: 16px; }
-.footer-logo { height: 40px; width: auto; display: block; background: none; border: none; }
+.footer-logo { height: 48px; width: auto; display: block; background: none; border: none; }
+.footer-brand-link { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
+.footer-brand-name { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: white; letter-spacing: -0.01em; line-height: 1; }
 .footer-tagline { font-size: 14px; line-height: 1.6; max-width: 280px; }
 .footer-col h4 {
   font-family: var(--font-body);
