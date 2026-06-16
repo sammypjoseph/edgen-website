@@ -104,11 +104,11 @@ fieldset { border: none; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 80px;
+  padding: 14px 0;
 }
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand-logo { height: 64px; width: auto; display: block; background: none; border: none; }
+.brand-logo { width: 310px; height: auto; display: block; background: none; border: none; }
 
 /* Primary nav */
 .nav {
