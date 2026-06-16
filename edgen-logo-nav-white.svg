@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 520" role="img" aria-label="EdGen Education Generation logo">
+  <defs>
+    <linearGradient id="goldGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#F8C14A"/>
+      <stop offset="1" stop-color="#F2A900"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="520" fill="none"/>
+  <g transform="translate(45 35)">
+    <path d="M135 310 C198 268 284 268 347 310" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
+    <path d="M135 355 C198 313 284 313 347 355" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
+    <path d="M135 400 C198 358 284 358 347 400" fill="none" stroke="#FFFFFF" stroke-width="24" stroke-linecap="round"/>
+    <path d="M241 305 L241 423" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round"/>
+    <path d="M145 160 A145 145 0 1 1 337 276" fill="none" stroke="#FFFFFF" stroke-width="52" stroke-linecap="butt"/>
+    <path d="M83 276 A145 145 0 0 1 145 160" fill="none" stroke="#FFFFFF" stroke-width="52" stroke-linecap="butt"/>
+    <path d="M112 230 H205" stroke="#FFFFFF" stroke-width="52" stroke-linecap="butt"/>
+    <path d="M267 231 H357" stroke="#FFFFFF" stroke-width="52" stroke-linecap="butt"/>
+    <path d="M251 10 L176 225 H248 L177 420 L335 190 H255 Z" fill="url(#goldGrad)"/>
+  </g>
+  <g transform="translate(485 105)">
+    <text x="0" y="115" font-family="Inter, Arial, Helvetica, sans-serif" font-size="150" font-weight="900" letter-spacing="-8" fill="#FFFFFF">EdGen</text>
+    <line x1="4" y1="190" x2="72" y2="190" stroke="#F2A900" stroke-width="8" stroke-linecap="round"/>
+    <line x1="670" y1="190" x2="738" y2="190" stroke="#F2A900" stroke-width="8" stroke-linecap="round"/>
+    <text x="95" y="203" font-family="Inter, Arial, Helvetica, sans-serif" font-size="46" font-weight="800" letter-spacing="13" fill="#FFFFFF">EDUCATION GENERATION</text>
+    <text x="95" y="285" font-family="Inter, Arial, Helvetica, sans-serif" font-size="40" font-weight="800" letter-spacing="11" fill="rgba(255,255,255,0.75)">POWERING THE JEWISH FUTURE</text>
+  </g>
+</svg>
