@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact EdGen</title>
+  <meta name="description" content="Contact EdGen — for families, donors, schools, press, and community partners. We aim to respond within 3 business days." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="edgen-icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .contact-layout { display: grid; grid-template-columns: 1fr 380px; gap: 48px; align-items: start; padding-block: clamp(48px,5vw,72px); }
+    .contact-channel { display: flex; gap: 16px; align-items: flex-start; padding: 20px; background: white; border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); transition: transform 0.18s, box-shadow 0.18s; }
+    .contact-channel:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .channel-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.2); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .channel-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--gold); margin-bottom: 3px; }
+    .channel-title { font-size: 15px; font-weight: 600; color: var(--navy); margin-bottom: 4px; }
+    .channel-desc { font-size: 13px; color: var(--muted); line-height: 1.5; margin-bottom: 6px; }
+    .channel-email { font-size: 13px; font-weight: 600; color: var(--navy); }
+    @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand" aria-label="EdGen home">
+        <img class="brand-logo" src="edgen-logo-header.png" alt="EdGen — Education Generation" />
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="program.html" class="nav-link">Program info</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            About us
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#vision">Vision &amp; Mission</a>
+            <a href="about.html#history">Our Story</a>
+          </div>
+        </div>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="donate.html" class="nav-donate">Donate</a>
+        <a href="apply.html" class="nav-apply">Apply now →</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="program.html">Program info</a>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">About us</button>
+      <div class="mobile-submenu" id="mobileAboutSubmenu" style="display:none;">
+        <a href="about.html#leadership">Leadership</a>
+        <a href="about.html#vision">Vision &amp; Mission</a>
+        <a href="about.html#history">Our Story</a>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-mobile-actions">
+        <a href="donate.html" class="btn btn-outline" style="color:var(--gold);border-color:var(--gold);">Donate</a>
+        <a href="apply.html" class="btn btn-primary">Apply now →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Contact EdGen</p>
+        <h1>We're here to help</h1>
+        <p>EdGen is pre-launch. Response times may vary as we build our team. We aim to respond to all inquiries within 3 business days.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Form -->
+        <div>
+          <div class="success-card" id="successCard" role="alert">
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h2>Message received</h2>
+            <p>Thank you for reaching out. We'll get back to you at <strong id="successEmail"></strong> within 3 business days.</p>
+            <a href="index.html" class="btn btn-primary" style="margin-top:8px;">Return to home</a>
+          </div>
+
+          <form id="contactForm" novalidate style="display:grid;gap:20px;">
+            <div style="margin-bottom:4px;">
+              <p class="eyebrow">Send us a message</p>
+              <h2 style="font-size:clamp(24px,2.8vw,36px);margin-bottom:0;">Get in touch</h2>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="contactName">Full name <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                <input type="text" id="contactName" name="contactName" class="form-input" autocomplete="name" required />
+                <span class="form-error" id="err-contactName"></span>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail">Email address <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                <input type="email" id="contactEmail" name="contactEmail" class="form-input" autocomplete="email" required />
+                <span class="form-error" id="err-contactEmail"></span>
+              </div>
+            </div>
+
+            <div class="form-grid-2">
+              <div class="form-group">
+                <label for="contactPhone">Phone number (optional)</label>
+                <input type="tel" id="contactPhone" name="contactPhone" class="form-input" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="contactRole">I am a <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                <select id="contactRole" name="contactRole" class="form-select" required>
+                  <option value="">Select your role</option>
+                  <option value="parent">Parent / Family</option>
+                  <option value="school">School (administrator or staff)</option>
+                  <option value="donor">Donor</option>
+                  <option value="community">Community leader</option>
+                  <option value="press">Press / Media</option>
+                  <option value="other">Other</option>
+                </select>
+                <span class="form-error" id="err-contactRole"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactSubject">Subject <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+              <input type="text" id="contactSubject" name="contactSubject" class="form-input" required placeholder="Brief description of your question or request" />
+              <span class="form-error" id="err-contactSubject"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+              <textarea id="contactMessage" name="contactMessage" class="form-input form-textarea" rows="6" required placeholder="Tell us how we can help"></textarea>
+              <span class="form-error" id="err-contactMessage"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full btn-lg">Send message</button>
+            <p style="font-size:12px;color:var(--muted);text-align:center;">EdGen does not sell or share your information. We aim to respond within 3 business days.</p>
+          </form>
+        </div>
+
+        <!-- Sidebar: contact channels -->
+        <aside aria-label="Contact channels">
+          <div style="display:grid;gap:16px;">
+            <div>
+              <p class="eyebrow">Who to contact</p>
+              <h3 style="font-size:20px;margin-bottom:20px;">The right inbox for your question</h3>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon" aria-hidden="true">👪</div>
+              <div>
+                <p class="channel-label">Families</p>
+                <p class="channel-title">Scholarship applicants &amp; families</p>
+                <p class="channel-desc">Questions about eligibility, applications, income verification, and the application process.</p>
+                <a href="mailto:families@edgeneration.org" class="channel-email">families@edgeneration.org</a>
+              </div>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon" aria-hidden="true">❤</div>
+              <div>
+                <p class="channel-label">Donors</p>
+                <p class="channel-title">Donors &amp; contribution questions</p>
+                <p class="channel-desc">Questions about the tax credit, how to give, designation options, and documentation.</p>
+                <a href="mailto:donors@edgeneration.org" class="channel-email">donors@edgeneration.org</a>
+              </div>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon" aria-hidden="true">🏫</div>
+              <div>
+                <p class="channel-label">Schools</p>
+                <p class="channel-title">School partnership inquiries</p>
+                <p class="channel-desc">Yeshivos, Bais Yaakovs, and day schools interested in partnering with EdGen.</p>
+                <a href="mailto:schools@edgeneration.org" class="channel-email">schools@edgeneration.org</a>
+              </div>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon" aria-hidden="true">📰</div>
+              <div>
+                <p class="channel-label">Press</p>
+                <p class="channel-title">Media &amp; press inquiries</p>
+                <p class="channel-desc">Journalists, editors, and producers covering the FSTC, school choice, or Jewish education.</p>
+                <a href="mailto:press@edgeneration.org" class="channel-email">press@edgeneration.org</a>
+              </div>
+            </div>
+
+            <div class="contact-channel">
+              <div class="channel-icon" aria-hidden="true">✉</div>
+              <div>
+                <p class="channel-label">General</p>
+                <p class="channel-title">Everything else</p>
+                <p class="channel-desc">Community briefings, partnership requests, speaking invitations, and general inquiries.</p>
+                <a href="mailto:info@edgeneration.org" class="channel-email">info@edgeneration.org</a>
+              </div>
+            </div>
+
+            <div class="alert alert-gold" style="margin-top:4px;">
+              <span class="alert-icon" style="font-size:16px;">ℹ</span>
+              <div style="font-size:13px;">EdGen is pre-launch. Response times may vary as we build our team. Thank you for your patience.</div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-col">
+          <img class="footer-logo" src="edgen-logo-header.png" alt="EdGen" />
+          <p class="footer-tagline">EdGen is a 501(c)(3) Scholarship Granting Organization for the Federal Scholarship Tax Credit, serving Orthodox Jewish families across the United States.</p>
+        </div>
+        <div class="footer-col"><h4>Program</h4><ul><li><a href="program.html">How it works</a></li><li><a href="program.html#ami-map">AMI eligibility map</a></li><li><a href="program.html#states">Participating states</a></li></ul></div>
+        <div class="footer-col"><h4>Organization</h4><ul><li><a href="about.html">About EdGen</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="resources.html">Resources</a></li></ul></div>
+        <div class="footer-col"><h4>Act now</h4><ul><li><a href="apply.html">Apply for a scholarship</a></li><li><a href="donate.html">Make a donation</a></li><li><a href="contact.html">Contact EdGen</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 EdGen — Education Generation, Inc. · 501(c)(3) · All rights reserved.</p>
+        <span class="footer-prelaunch">Pre-launch — Program launches January 1, 2027</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    const mdt = document.querySelector('.mobile-dropdown-toggle');
+    const mas = document.getElementById('mobileAboutSubmenu');
+    if (mdt) mdt.addEventListener('click', () => { const o = mas.style.display !== 'none'; mas.style.display = o ? 'none' : 'block'; });
+
+    // Contact form
+    function setErr(id, msg) {
+      const el = document.getElementById('err-'+id);
+      if (el) el.textContent = msg;
+      const inp = document.getElementById(id);
+      if (inp) inp.classList.toggle('error', !!msg);
+    }
+    function clearErrs() {
+      document.querySelectorAll('.form-error').forEach(e => e.textContent = '');
+      document.querySelectorAll('.error').forEach(e => e.classList.remove('error'));
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', e => {
+      e.preventDefault();
+      clearErrs();
+      let ok = true;
+      const f = id => document.getElementById(id)?.value?.trim();
+      if (!f('contactName')) { setErr('contactName','Please enter your name.'); ok=false; }
+      const em = f('contactEmail');
+      if (!em) { setErr('contactEmail','Please enter your email.'); ok=false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { setErr('contactEmail','Please enter a valid email.'); ok=false; }
+      if (!f('contactRole')) { setErr('contactRole','Please select your role.'); ok=false; }
+      if (!f('contactSubject')) { setErr('contactSubject','Please enter a subject.'); ok=false; }
+      if (!f('contactMessage')) { setErr('contactMessage','Please enter your message.'); ok=false; }
+      if (!ok) { document.querySelector('.form-error:not(:empty)')?.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+      document.getElementById('successEmail').textContent = em;
+      document.getElementById('contactForm').style.display = 'none';
+      const sc = document.getElementById('successCard');
+      sc.classList.add('visible');
+      sc.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  </script>
+</body>
+</html>

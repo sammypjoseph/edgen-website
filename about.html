@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About EdGen | Education Generation</title>
+  <meta name="description" content="EdGen is a new 501(c)(3) Scholarship Granting Organization for the Federal Scholarship Tax Credit. Our mission: make Jewish day school accessible to every eligible family." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="edgen-icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .value-card { border-left: 4px solid var(--gold); padding: 20px 24px; background: white; border-radius: 0 var(--radius) var(--radius) 0; box-shadow: var(--shadow-sm); }
+    .value-card h4 { font-size: 18px; margin-bottom: 8px; color: var(--navy); }
+    .value-card p { font-size: 14.5px; color: var(--muted); line-height: 1.65; margin: 0; }
+    .quote-block { border-left: 4px solid var(--gold); padding: 20px 28px; background: var(--gold-pale); border-radius: 0 var(--radius-lg) var(--radius-lg) 0; }
+    .quote-block blockquote { font-family: var(--font-heading); font-size: clamp(18px,2.2vw,24px); font-weight: 600; color: var(--navy); line-height: 1.4; margin: 0; font-style: italic; }
+    .quote-block cite { display: block; margin-top: 12px; font-size: 13px; color: var(--muted); font-style: normal; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand" aria-label="EdGen home">
+        <img class="brand-logo" src="edgen-logo-header.png" alt="EdGen — Education Generation" />
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="program.html" class="nav-link">Program info</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            About us
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#vision">Vision &amp; Mission</a>
+            <a href="about.html#history">Our Story</a>
+          </div>
+        </div>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="donate.html" class="nav-donate">Donate</a>
+        <a href="apply.html" class="nav-apply">Apply now →</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="program.html">Program info</a>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">About us</button>
+      <div class="mobile-submenu" id="mobileAboutSubmenu" style="display:none;">
+        <a href="about.html#leadership">Leadership</a>
+        <a href="about.html#vision">Vision &amp; Mission</a>
+        <a href="about.html#history">Our Story</a>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-mobile-actions">
+        <a href="donate.html" class="btn btn-outline" style="color:var(--gold);border-color:var(--gold);">Donate</a>
+        <a href="apply.html" class="btn btn-primary">Apply now →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">About EdGen</p>
+        <h1>Built to Serve Every Jewish Family</h1>
+        <p>EdGen is a new 501(c)(3) Scholarship Granting Organization founded to make Jewish day school education accessible to every eligible family through the Federal Scholarship Tax Credit.</p>
+      </div>
+    </div>
+
+    <!-- Sub-navigation -->
+    <div style="background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:68px;z-index:50;">
+      <div class="container">
+        <nav style="display:flex;gap:4px;overflow-x:auto;padding:4px 0;" aria-label="About sections">
+          <a href="#overview" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;">Overview</a>
+          <a href="#leadership" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;">Leadership</a>
+          <a href="#vision" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;">Vision &amp; Mission</a>
+          <a href="#history" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;">Our Story</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         OVERVIEW
+         ==================================================== -->
+    <section class="section section-warm" id="overview" aria-labelledby="overview-heading">
+      <div class="container">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;" class="responsive-split">
+          <div class="fade-in">
+            <p class="eyebrow">Our mission</p>
+            <h2 id="overview-heading">What makes EdGen different</h2>
+            <p style="font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:20px;">EdGen is the only national Scholarship Granting Organization built specifically for Orthodox Jewish families. We exist to close the gap between the families who need school choice and the donors who want to make a difference — with zero administrative friction and zero cost passed to students.</p>
+            <div style="display:grid;gap:16px;margin-top:24px;">
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:700;flex-shrink:0;">0%</div>
+                <div>
+                  <strong style="display:block;font-size:16px;margin-bottom:4px;">Zero administrative fees</strong>
+                  <p style="font-size:14px;color:var(--muted);margin:0;line-height:1.6;">Every dollar donated goes to scholarships. Our overhead is covered by philanthropic support, not by the scholarship pool.</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;">USA</div>
+                <div>
+                  <strong style="display:block;font-size:16px;margin-bottom:4px;">National platform</strong>
+                  <p style="font-size:14px;color:var(--muted);margin:0;line-height:1.6;">EdGen serves families and schools across all 29 states currently opted in to the FSTC, with a single unified system.</p>
+                </div>
+              </div>
+              <div style="display:flex;gap:14px;align-items:flex-start;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;">100%</div>
+                <div>
+                  <strong style="display:block;font-size:16px;margin-bottom:4px;">Full-service infrastructure</strong>
+                  <p style="font-size:14px;color:var(--muted);margin:0;line-height:1.6;">Donor intake, family application, income verification, school onboarding, scholarship disbursement — one platform, end to end.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="fade-in">
+            <img src="Family_Image_-_6_15_26.png" alt="Jewish family outside their children's school" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-lg);width:100%;aspect-ratio:4/3;object-fit:cover;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         LEADERSHIP
+         ==================================================== -->
+    <section class="section section-white" id="leadership" aria-labelledby="leadership-heading">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <p class="eyebrow">Leadership</p>
+          <h2 id="leadership-heading">The team building EdGen</h2>
+          <p class="intro">EdGen is being built by a small founding team with deep experience in Jewish communal affairs, nonprofit management, and education policy. Leadership bios will be updated as the organization grows.</p>
+        </div>
+
+        <div class="grid-3 fade-in">
+          <!-- COO placeholder -->
+          <div class="leader-card">
+            <div class="leader-avatar" style="font-size:20px;">COO</div>
+            <p class="leader-name">Name, COO</p>
+            <p class="leader-title">Chief Operating Officer</p>
+            <p class="leader-bio">Bio to be added. The COO is EdGen's first hire and is responsible for building the organization's operations, systems, and community relationships ahead of the January 2027 launch.</p>
+          </div>
+
+          <!-- Board placeholder 1 -->
+          <div class="leader-card">
+            <div class="leader-avatar">BD</div>
+            <p class="leader-name">Board Member</p>
+            <p class="leader-title">Board of Directors</p>
+            <p class="leader-bio">Placeholder for board member bio. To be updated as EdGen's board is formalized and announced publicly.</p>
+          </div>
+
+          <!-- Board placeholder 2 -->
+          <div class="leader-card">
+            <div class="leader-avatar">BD</div>
+            <p class="leader-name">Board Member</p>
+            <p class="leader-title">Board of Directors</p>
+            <p class="leader-bio">Placeholder for board member bio. To be updated as EdGen's board is formalized and announced publicly.</p>
+          </div>
+        </div>
+
+        <div class="alert alert-gold" style="max-width:600px;margin:28px auto 0;">
+          <span class="alert-icon">ℹ</span>
+          <div>EdGen is a new organization. Leadership and board bios will be updated as the team grows. Interested in joining our board or advisory committee? <a href="contact.html" style="color:var(--navy);font-weight:700;">Contact us →</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         VISION & MISSION
+         ==================================================== -->
+    <section class="section section-warm" id="vision" aria-labelledby="vision-heading">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <p class="eyebrow">Vision &amp; Mission</p>
+          <h2 id="vision-heading">Why we exist</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:56px;" class="responsive-split">
+          <div class="fade-in">
+            <div style="background:var(--navy);border-radius:var(--radius-lg);padding:36px;color:white;">
+              <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:12px;">Our Vision</p>
+              <p style="font-family:var(--font-heading);font-size:clamp(18px,2.2vw,24px);font-weight:600;line-height:1.45;color:white;margin:0;">A future where every Jewish family can send their child to the school that is best for them, regardless of financial circumstances.</p>
+            </div>
+          </div>
+          <div class="fade-in">
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow-sm);">
+              <p style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--gold);margin-bottom:12px;">Our Mission</p>
+              <p style="font-size:16px;color:var(--navy);line-height:1.7;margin:0;">EdGen exists to make Jewish day school accessible to every eligible family by operating a full-service, 0% fee Scholarship Granting Organization for the Federal Scholarship Tax Credit — connecting donors who want to make a difference with the children and schools that need their support.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="section-header centered fade-in">
+          <p class="eyebrow">Core values</p>
+          <h3 style="font-size:clamp(22px,2.5vw,32px);">What we stand for</h3>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="fade-in">
+          <div class="value-card">
+            <h4>Every Family Deserves a Choice</h4>
+            <p>School choice is not a privilege — it is a fundamental right for Jewish families. We exist to make it real, accessible, and affordable for every eligible household.</p>
+          </div>
+          <div class="value-card">
+            <h4>Transparency Over Everything</h4>
+            <p>0% fees, clear eligibility rules, honest communication about pending guidance. EdGen never overpromises. We tell families, donors, and schools exactly what we know and what we don't.</p>
+          </div>
+          <div class="value-card">
+            <h4>Communal Responsibility</h4>
+            <p>Jewish education is a communal obligation — not just an individual family's burden. EdGen mobilizes donors, schools, and communities to share the cost and the credit.</p>
+          </div>
+          <div class="value-card">
+            <h4>Excellence in Execution</h4>
+            <p>The Orthodox Jewish community deserves an SGO with the operational rigor, compliance discipline, and customer service of a best-in-class organization. We build for that standard.</p>
+          </div>
+          <div class="value-card">
+            <h4>Respect for Every Student</h4>
+            <p>Scholarships are not charity — they are a mechanism for families to access what their children deserve. We treat every applicant with the dignity and respect that entails.</p>
+          </div>
+          <div class="value-card">
+            <h4>Long-Term Thinking</h4>
+            <p>EdGen is being built to last — with the governance, infrastructure, and relationships to serve Jewish families not just at launch, but for generations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         OUR STORY / HISTORY
+         ==================================================== -->
+    <section class="section section-white" id="history" aria-labelledby="history-heading">
+      <div class="container">
+        <div style="max-width:760px;margin-inline:auto;">
+          <div class="section-header fade-in">
+            <p class="eyebrow">Our story</p>
+            <h2 id="history-heading">How EdGen came to be</h2>
+          </div>
+
+          <div class="fade-in" style="display:grid;gap:20px;">
+            <p style="font-size:17px;color:var(--muted);line-height:1.75;">When Congress enacted the Federal Scholarship Tax Credit as part of the Tax Cuts &amp; Jobs Act of 2025, it created something the Jewish community had never seen before: a federal mechanism that would allow donors to give up to $3,400 per year to scholarship organizations — and receive a full, 100% tax credit for every dollar.</p>
+            <p style="font-size:17px;color:var(--muted);line-height:1.75;">The opportunity was historic. But the Orthodox Jewish community needed a purpose-built SGO — one that understood yeshivos, Bais Yaakovs, and Jewish day schools; one that could serve families in 29 states simultaneously; one that would charge 0% administrative fees and put every donated dollar into scholarships.</p>
+            <p style="font-size:17px;color:var(--muted);line-height:1.75;">EdGen was founded to be that organization. Named for Education Generation — the idea that every generation of Jewish children deserves the full support of their community — EdGen is being built from the ground up to serve the FSTC's full potential for Orthodox Jewish families.</p>
+            <p style="font-size:17px;color:var(--muted);line-height:1.75;">We are a 501(c)(3) organization, pre-launch, with a program launch target of January 1, 2027. We have the endorsement of four major national Jewish organizations — Jewish Federations of North America, Torah Umesorah, the Orthodox Union, and Prizmah — and we are building the systems, relationships, and team to deliver on this mission.</p>
+
+            <div class="quote-block" style="margin-top:12px;">
+              <blockquote>"The FSTC is a once-in-a-generation opportunity for Jewish education. EdGen exists to make sure no eligible family is left behind."</blockquote>
+              <cite>— EdGen Founding Team</cite>
+            </div>
+          </div>
+
+          <!-- Endorsers brief -->
+          <div style="margin-top:48px;" class="fade-in">
+            <p class="eyebrow">National endorsers</p>
+            <h3 style="font-size:22px;margin-bottom:20px;">Supported by the leading voices in Jewish education</h3>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+              <div style="background:var(--warm-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+                <strong style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px;">Jewish Federations of North America</strong>
+                <a href="https://www.jewishfederations.org/" target="_blank" rel="noopener" style="font-size:12px;color:var(--gold);">jewishfederations.org</a>
+              </div>
+              <div style="background:var(--warm-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+                <strong style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px;">Torah Umesorah</strong>
+                <a href="https://www.torahumesorah.org/" target="_blank" rel="noopener" style="font-size:12px;color:var(--gold);">torahumesorah.org</a>
+              </div>
+              <div style="background:var(--warm-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+                <strong style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px;">Orthodox Union</strong>
+                <a href="https://www.ou.org/" target="_blank" rel="noopener" style="font-size:12px;color:var(--gold);">ou.org</a>
+              </div>
+              <div style="background:var(--warm-white);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;">
+                <strong style="display:block;font-size:15px;color:var(--navy);margin-bottom:4px;">Prizmah</strong>
+                <a href="https://prizmah.org/" target="_blank" rel="noopener" style="font-size:12px;color:var(--gold);">prizmah.org</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner" aria-labelledby="about-cta-heading">
+      <div class="cta-banner-inner fade-in">
+        <p class="eyebrow" style="text-align:center;">Get involved</p>
+        <h2 id="about-cta-heading">Join us in building something historic</h2>
+        <p>Whether you're a family, a donor, a school, or a community leader — there's a role for you at EdGen.</p>
+        <div class="cta-banner-actions">
+          <a href="apply.html" class="btn btn-primary btn-lg">Apply for a scholarship</a>
+          <a href="donate.html" class="btn btn-secondary btn-lg">Make a donation</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-col">
+          <img class="footer-logo" src="edgen-logo-header.png" alt="EdGen" />
+          <p class="footer-tagline">EdGen is a 501(c)(3) Scholarship Granting Organization for the Federal Scholarship Tax Credit, serving Orthodox Jewish families across the United States.</p>
+        </div>
+        <div class="footer-col"><h4>Program</h4><ul><li><a href="program.html">How it works</a></li><li><a href="program.html#ami-map">AMI eligibility map</a></li><li><a href="program.html#states">Participating states</a></li></ul></div>
+        <div class="footer-col"><h4>Organization</h4><ul><li><a href="about.html">About EdGen</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="about.html#vision">Vision &amp; Mission</a></li><li><a href="resources.html">Resources</a></li></ul></div>
+        <div class="footer-col"><h4>Act now</h4><ul><li><a href="apply.html">Apply</a></li><li><a href="donate.html">Donate</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 EdGen — Education Generation, Inc. · 501(c)(3) · All rights reserved.</p>
+        <span class="footer-prelaunch">Pre-launch — Program launches January 1, 2027</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    const mdt = document.querySelector('.mobile-dropdown-toggle');
+    const mas = document.getElementById('mobileAboutSubmenu');
+    if (mdt) mdt.addEventListener('click', () => { const o = mas.style.display !== 'none'; mas.style.display = o ? 'none' : 'block'; });
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    } else { document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible')); }
+  </script>
+</body>
+</html>

@@ -106,8 +106,10 @@
     const min = d3.min(values) || 0;
     const max = d3.max(values) || 1;
 
-    const colors = ["#dbe8ff", "#aecaef", "#7ea7e6", "#3f75d7", "#0038B8", "#071f4f"];
-    const color = d3.scaleQuantize().domain([min, max]).range(colors);
+    // Fixed $100K thresholds for even legend increments
+    const THRESHOLDS = [100000, 200000, 300000, 400000, 500000];
+    const colors = ["#f5edd8", "#e8d4a0", "#c9a84c", "#9e7e2e", "#6b5419", "#3d2f0a"];
+    const color = d3.scaleThreshold().domain(THRESHOLDS).range(colors);
 
     const countiesFeature = topojson.feature(us, us.objects.counties);
     const counties = countiesFeature.features;
@@ -129,7 +131,7 @@
       .attr("fill", d => {
         const geoid = String(d.id).padStart(5, "0");
         const rec = records[geoid];
-        return rec ? color(rec.value) : "#edf1f7";
+        return rec ? color(rec.value) : "#e8eef5";
       })
       .on("mousemove", function (event, d) {
         const geoid = String(d.id).padStart(5, "0");
@@ -157,16 +159,26 @@
       .attr("class", "edgen-state-boundary")
       .attr("d", path);
 
-    const thresholds = color.thresholds();
-    const legendItems = colors.map((c, i) => {
-      const low = i === 0 ? min : thresholds[i - 1];
-      return { c, label: `${fmt.format(low)}+` };
-    });
+    // Fixed legend labels at even $100K increments
+    const legendItems = [
+      { c: colors[0], label: "< $100K" },
+      { c: colors[1], label: "$100K" },
+      { c: colors[2], label: "$200K" },
+      { c: colors[3], label: "$300K" },
+      { c: colors[4], label: "$400K" },
+      { c: colors[5], label: "$500K+" },
+    ];
 
     legend.selectAll("span")
       .data(legendItems)
       .join("span")
-      .html(d => `<i style="background:${d.c}"></i>${d.label}`);
+      .html(d => `<i style="background:${d.c};display:inline-block;width:14px;height:14px;border-radius:3px;margin-right:5px;vertical-align:middle;"></i>${d.label}`)
+      .style("display", "inline-flex")
+      .style("align-items", "center")
+      .style("margin-right", "12px")
+      .style("font-size", "12px")
+      .style("font-weight", "500")
+      .style("color", "#0A1628");
 
     const searchable = Object.values(records)
       .sort((a, b) => `${a.county} ${a.state}`.localeCompare(`${b.county} ${b.state}`));

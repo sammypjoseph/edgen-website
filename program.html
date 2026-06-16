@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Information | EdGen</title>
+  <meta name="description" content="How the Federal Scholarship Tax Credit works, AMI eligibility by county, participating states, eligible expenses, and program details for families, donors, and schools." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <link rel="icon" href="edgen-icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="edgen-ami-map.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand" aria-label="EdGen home">
+        <img class="brand-logo" src="edgen-logo-header.png" alt="EdGen — Education Generation" />
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="program.html" class="nav-link active">Program info</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            About us
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+              <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#vision">Vision &amp; Mission</a>
+            <a href="about.html#history">Our Story</a>
+          </div>
+        </div>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="donate.html" class="nav-donate">Donate</a>
+        <a href="apply.html" class="nav-apply">Apply now →</a>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="program.html">Program info</a>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">About us</button>
+      <div class="mobile-submenu" id="mobileAboutSubmenu" style="display:none;">
+        <a href="about.html#leadership">Leadership</a>
+        <a href="about.html#vision">Vision &amp; Mission</a>
+        <a href="about.html#history">Our Story</a>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-mobile-actions">
+        <a href="donate.html" class="btn btn-outline" style="color:var(--gold);border-color:var(--gold);">Donate</a>
+        <a href="apply.html" class="btn btn-primary">Apply now →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Federal Scholarship Tax Credit</p>
+        <h1>How the FSTC Works</h1>
+        <p>Everything you need to understand the Federal Scholarship Tax Credit — eligibility, participating states, the AMI threshold, and how EdGen connects all the pieces.</p>
+      </div>
+    </div>
+
+    <!-- In-page anchor nav -->
+    <div style="background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:68px;z-index:50;">
+      <div class="container">
+        <nav style="display:flex;gap:4px;overflow-x:auto;padding:4px 0;" aria-label="Page sections">
+          <a href="#what-is-fstc" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;transition:color 0.15s,background 0.15s;">What is the FSTC?</a>
+          <a href="#ami-map" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;transition:color 0.15s,background 0.15s;">AMI Map</a>
+          <a href="#states" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;transition:color 0.15s,background 0.15s;">Participating States</a>
+          <a href="#expenses" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;transition:color 0.15s,background 0.15s;">Eligible Expenses</a>
+          <a href="#stakeholders" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;transition:color 0.15s,background 0.15s;">For Families / Donors / Schools</a>
+          <a href="#faq" style="display:inline-block;padding:10px 14px;font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap;border-radius:6px;transition:color 0.15s,background 0.15s;">FAQ</a>
+        </nav>
+      </div>
+    </div>
+
+    <!-- ====================================================
+         WHAT IS THE FSTC
+         ==================================================== -->
+    <section class="section section-warm" id="what-is-fstc" aria-labelledby="fstc-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="eyebrow">The basics</p>
+          <h2 id="fstc-heading">What is the Federal Scholarship Tax Credit?</h2>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;" class="responsive-split">
+          <div class="fade-in">
+            <p style="font-size:17px;line-height:1.75;color:var(--muted);margin-bottom:24px;">
+              The Federal Scholarship Tax Credit (FSTC) is a federal program enacted in 2025 that provides a dollar-for-dollar tax credit — not a deduction, but a full credit — for contributions made to eligible Scholarship Granting Organizations (SGOs). Donors receive a 100% credit against their federal income tax liability, up to $1,700 for single filers and $3,400 for married taxpayers filing jointly.
+            </p>
+            <p style="font-size:17px;line-height:1.75;color:var(--muted);margin-bottom:24px;">
+              SGOs use these contributions to award scholarships to eligible K–12 students attending private schools in participating states. Eligibility is based on household income — specifically, households whose income falls at or below 300% of the Area Median Income (AMI) for their county.
+            </p>
+            <p style="font-size:17px;line-height:1.75;color:var(--muted);">
+              EdGen is a 501(c)(3) SGO focused exclusively on serving Orthodox Jewish families — connecting donors who want 100% credit for their giving with families who need scholarship support for yeshivos, Bais Yaakovs, and Jewish day schools.
+            </p>
+          </div>
+
+          <div class="fade-in" style="display:grid;gap:16px;">
+            <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);">
+              <p class="eyebrow">Key facts</p>
+              <ul style="display:grid;gap:14px;">
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span>
+                  <div>
+                    <strong style="display:block;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:2px;">100% federal tax credit</strong>
+                    <span style="font-size:13.5px;color:var(--muted);">Your entire contribution comes back as a dollar-for-dollar credit against federal income tax owed.</span>
+                  </div>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span>
+                  <div>
+                    <strong style="display:block;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:2px;">$1,700 single / $3,400 MFJ</strong>
+                    <span style="font-size:13.5px;color:var(--muted);">Per-donor credit caps per tax year. Subject to final IRS/Treasury guidance.</span>
+                  </div>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span>
+                  <div>
+                    <strong style="display:block;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:2px;">300% AMI eligibility threshold</strong>
+                    <span style="font-size:13.5px;color:var(--muted);">Families qualify based on household income relative to their county's AMI, set by HUD annually.</span>
+                  </div>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span>
+                  <div>
+                    <strong style="display:block;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:2px;">29 states currently opted in</strong>
+                    <span style="font-size:13.5px;color:var(--muted);">States must affirmatively opt in to the program. The list grows over time.</span>
+                  </div>
+                </li>
+                <li style="display:flex;gap:12px;align-items:flex-start;">
+                  <span style="width:28px;height:28px;border-radius:50%;background:var(--gold);color:var(--navy);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:1px;">✓</span>
+                  <div>
+                    <strong style="display:block;font-size:15px;font-weight:600;color:var(--navy);margin-bottom:2px;">K–12 private school scholarships</strong>
+                    <span style="font-size:13.5px;color:var(--muted);">Scholarship funds go toward qualified K–12 education expenses at eligible private schools.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="alert alert-gold">
+              <span class="alert-icon">⚠</span>
+              <div>
+                <strong>Pending IRS/Treasury guidance:</strong> Several aspects of the FSTC — including rules on parent residence vs. school location for cross-state families — await final IRS/Treasury rulemaking. EdGen will update all content as rules develop. This page does not constitute legal or tax advice.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         AMI MAP (full version)
+         ==================================================== -->
+    <section class="section section-white edgen-ami-map-section" id="ami-map" aria-labelledby="ami-map-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="eyebrow">2026 Eligibility Planning Tool</p>
+          <h2 id="ami-map-heading">300% AMI Eligibility Map — by County</h2>
+          <p class="intro">Search any U.S. county to see the HUD FY 2026 300% AMI threshold for a family of four. Use this as a planning guide — your actual eligibility is determined during the application process.</p>
+        </div>
+
+        <div class="edgen-ami-map-header">
+          <div></div>
+          <div class="edgen-ami-map-source-card">
+            <strong>Data source</strong>
+            <span>HUD FY 2026 Section 8 Income Limits</span>
+            <small>Effective May 1, 2026</small>
+          </div>
+        </div>
+
+        <div class="edgen-ami-map-toolbar">
+          <label for="edgenCountySearch">Find a county</label>
+          <input id="edgenCountySearch" type="search" list="edgenCountyOptions" placeholder="e.g. Nassau County, NY" autocomplete="off" />
+          <datalist id="edgenCountyOptions"></datalist>
+          <div class="edgen-ami-map-legend" id="edgenAmiMapLegend" aria-label="Map color legend"></div>
+        </div>
+
+        <div class="edgen-ami-map-layout">
+          <div class="edgen-ami-map-wrap">
+            <svg id="edgenAmiMap" viewBox="0 0 975 610" preserveAspectRatio="xMidYMid meet" role="img" aria-label="United States county map showing 300% AMI eligibility thresholds"></svg>
+            <div class="edgen-ami-map-tooltip" id="edgenAmiMapTooltip" role="status" aria-live="polite"></div>
+          </div>
+          <aside class="edgen-ami-map-info" id="edgenAmiMapInfo">
+            <p class="mini-eyebrow">Hover or search</p>
+            <h3>Select a county</h3>
+            <p>Move your mouse over any county or type a county name and state below to see your 300% AMI eligibility threshold for tax year 2026.</p>
+          </aside>
+        </div>
+
+        <p class="edgen-ami-map-disclaimer">
+          This map is for informational planning purposes only and does not constitute a determination of eligibility. Final FSTC eligibility depends on federal law, IRS/Treasury guidance, SGO review, verified household income, state participation, and final program rules. Thresholds may vary by household size — data shown reflects the HUD FY 2026 4-person household limit ×3.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         STATE OPT-IN TRACKER
+         ==================================================== -->
+    <section class="section section-warm" id="states" aria-labelledby="states-heading">
+      <div class="container">
+        <div class="section-header fade-in" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+          <div>
+            <p class="eyebrow">Participating states</p>
+            <h2 id="states-heading">States currently opted in to the FSTC</h2>
+            <p class="intro" style="margin-top:12px;">To be eligible, a family's state of residence or the student's school state must have affirmatively opted in to the Federal Scholarship Tax Credit program. The list below reflects current opt-in status and is subject to change.</p>
+          </div>
+          <a href="edgen-state-opt-in-tracker.pdf" download class="btn btn-outline" style="flex-shrink:0;">Download tracker PDF</a>
+        </div>
+
+        <div class="state-grid fade-in">
+          <div class="state-badge"><span class="state-check">✓</span> Alabama</div>
+          <div class="state-badge"><span class="state-check">✓</span> Alaska</div>
+          <div class="state-badge"><span class="state-check">✓</span> Arkansas</div>
+          <div class="state-badge"><span class="state-check">✓</span> Colorado</div>
+          <div class="state-badge"><span class="state-check">✓</span> Florida</div>
+          <div class="state-badge"><span class="state-check">✓</span> Georgia</div>
+          <div class="state-badge"><span class="state-check">✓</span> Idaho</div>
+          <div class="state-badge"><span class="state-check">✓</span> Indiana</div>
+          <div class="state-badge"><span class="state-check">✓</span> Iowa</div>
+          <div class="state-badge"><span class="state-check">✓</span> Louisiana</div>
+          <div class="state-badge"><span class="state-check">✓</span> Mississippi</div>
+          <div class="state-badge"><span class="state-check">✓</span> Missouri</div>
+          <div class="state-badge"><span class="state-check">✓</span> Montana</div>
+          <div class="state-badge"><span class="state-check">✓</span> Nebraska</div>
+          <div class="state-badge"><span class="state-check">✓</span> Nevada</div>
+          <div class="state-badge"><span class="state-check">✓</span> New Hampshire</div>
+          <div class="state-badge"><span class="state-check">✓</span> North Dakota</div>
+          <div class="state-badge"><span class="state-check">✓</span> Ohio</div>
+          <div class="state-badge"><span class="state-check">✓</span> Oklahoma</div>
+          <div class="state-badge"><span class="state-check">✓</span> South Carolina</div>
+          <div class="state-badge"><span class="state-check">✓</span> South Dakota</div>
+          <div class="state-badge"><span class="state-check">✓</span> Tennessee</div>
+          <div class="state-badge"><span class="state-check">✓</span> Texas</div>
+          <div class="state-badge"><span class="state-check">✓</span> Utah</div>
+          <div class="state-badge"><span class="state-check">✓</span> Virginia</div>
+          <div class="state-badge"><span class="state-check">✓</span> West Virginia</div>
+          <div class="state-badge"><span class="state-check">✓</span> Wyoming</div>
+        </div>
+
+        <p style="margin-top:20px;font-size:13px;color:var(--muted);">
+          29 states currently opted in. Additional states may opt in at any time. State opt-in status is subject to legislative or executive action and may change. EdGen maintains the most current list available — download the <a href="edgen-state-opt-in-tracker.pdf" download style="color:var(--gold);font-weight:600;">State Opt-In Tracker PDF</a> for the full current list and update workflow.
+        </p>
+        <p style="margin-top:8px;font-size:13px;color:var(--muted);">
+          <strong style="color:var(--navy);">Note on residence vs. school location:</strong> Whether eligibility is determined by the family's home state, the school's state, or both is a question that awaits final IRS/Treasury guidance. EdGen will update this page as rules develop.
+        </p>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         ELIGIBLE EXPENSES
+         ==================================================== -->
+    <section class="section section-white" id="expenses" aria-labelledby="expenses-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="eyebrow">What scholarships can cover</p>
+          <h2 id="expenses-heading">Eligible Education Expenses</h2>
+          <p class="intro">FSTC scholarships can be applied to a range of qualified K–12 education expenses. Final guidance from the IRS and Treasury on the full scope of eligible expenses is pending.</p>
+        </div>
+
+        <div class="grid-3 fade-in">
+          <div class="card">
+            <div class="card-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
+            <h3>Tuition &amp; Fees</h3>
+            <p>Annual and semester tuition charged by eligible K–12 private schools, including registration fees, activity fees, and mandatory school charges.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ti ti-book" aria-hidden="true"></i></div>
+            <h3>Books &amp; Supplies</h3>
+            <p>Required textbooks, workbooks, Judaic studies materials, lab supplies, and other educational materials required for enrolled courses.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="ti ti-help" aria-hidden="true"></i></div>
+            <h3>Other Approved Expenses</h3>
+            <p>Additional qualified K–12 education expenses as defined under the program. The full list of eligible expense categories is subject to final IRS/Treasury rulemaking.</p>
+          </div>
+        </div>
+
+        <div class="alert alert-gold" style="margin-top:24px;">
+          <span class="alert-icon">⚠</span>
+          <div>
+            <strong>Pending guidance:</strong> The complete list of eligible expenses — including whether transportation, uniforms, tutoring, or other costs qualify — awaits final IRS/Treasury rules. EdGen will update this section as guidance is issued. Nothing on this page constitutes a guarantee of expense eligibility for any specific cost.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         FOR FAMILIES / DONORS / SCHOOLS
+         ==================================================== -->
+    <section class="section section-warm" id="stakeholders" aria-labelledby="stakeholders-heading">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <p class="eyebrow">Who EdGen serves</p>
+          <h2 id="stakeholders-heading">For Families, Donors, and Schools</h2>
+        </div>
+
+        <!-- Tabs -->
+        <div style="display:flex;gap:8px;margin-bottom:32px;border-bottom:2px solid var(--border);">
+          <button class="tab-btn active" data-tab="families" style="padding:12px 20px;font-size:15px;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;transition:color 0.15s,border-color 0.15s;">For Families</button>
+          <button class="tab-btn" data-tab="donors" style="padding:12px 20px;font-size:15px;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;transition:color 0.15s,border-color 0.15s;">For Donors</button>
+          <button class="tab-btn" data-tab="schools" style="padding:12px 20px;font-size:15px;font-weight:600;color:var(--muted);background:none;border:none;border-bottom:2px solid transparent;margin-bottom:-2px;cursor:pointer;transition:color 0.15s,border-color 0.15s;">For Schools</button>
+        </div>
+
+        <div id="tab-families" class="tab-content">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="responsive-split">
+            <div>
+              <h3 style="margin-bottom:16px;">Families: How to apply</h3>
+              <p style="color:var(--muted);margin-bottom:16px;line-height:1.7;">If your household income is at or below 300% of the Area Median Income for your county, and your child attends (or will attend) an eligible private K–12 school in a participating state, you may qualify for an EdGen scholarship.</p>
+              <p style="color:var(--muted);margin-bottom:24px;line-height:1.7;">EdGen's application process is designed to be clear, secure, and free to families. We handle the verification process so you can focus on what matters — your child's education.</p>
+              <a href="apply.html" class="btn btn-primary">Start your application →</a>
+            </div>
+            <div style="display:grid;gap:12px;">
+              <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+                <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:8px;">What you'll need</p>
+                <ul style="display:grid;gap:8px;">
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> Parent/guardian name, address, email, phone</li>
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> Student name, date of birth, current grade</li>
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> School name and state</li>
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> Prior-year household adjusted gross income (AGI)</li>
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> Consent for IRS IVES income verification (at launch)</li>
+                </ul>
+              </div>
+              <a href="edgen-application-document-checklist.pdf" download class="btn btn-outline">Download Application Checklist</a>
+              <a href="edgen-parent-faq.pdf" download class="btn btn-outline">Download Parent FAQ</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-donors" class="tab-content" style="display:none;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="responsive-split">
+            <div>
+              <h3 style="margin-bottom:16px;">Donors: Make an impact at zero net cost</h3>
+              <p style="color:var(--muted);margin-bottom:16px;line-height:1.7;">When you contribute to EdGen, you receive a 100% federal tax credit — up to $1,700 if you file single, $3,400 if you file married filing jointly. That means your $1,700 contribution results in $0 net out of pocket after your tax credit.</p>
+              <p style="color:var(--muted);margin-bottom:16px;line-height:1.7;">100% of your contribution goes directly to scholarship awards for eligible students. EdGen charges 0% administrative fees — our overhead is covered separately, so every dollar you give reaches a family.</p>
+              <p style="color:var(--muted);margin-bottom:24px;line-height:1.7;">You may optionally designate your contribution toward a specific school, school system, city, or state — subject to IRS rules prohibiting earmarks for specific students.</p>
+              <a href="donate.html" class="btn btn-primary">Submit your intent to give →</a>
+            </div>
+            <div style="display:grid;gap:12px;">
+              <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+                <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:8px;">Tax credit summary</p>
+                <div style="display:grid;gap:10px;">
+                  <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--border);">
+                    <span style="font-size:14px;color:var(--muted);">Single filer credit cap</span>
+                    <strong style="font-size:15px;color:var(--navy);">$1,700</strong>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--border);">
+                    <span style="font-size:14px;color:var(--muted);">Married filing jointly cap</span>
+                    <strong style="font-size:15px;color:var(--navy);">$3,400</strong>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid var(--border);">
+                    <span style="font-size:14px;color:var(--muted);">Admin fee</span>
+                    <strong style="font-size:15px;color:var(--gold);">0%</strong>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;">
+                    <span style="font-size:14px;color:var(--muted);">To scholarships</span>
+                    <strong style="font-size:15px;color:var(--gold);">100%</strong>
+                  </div>
+                </div>
+              </div>
+              <a href="edgen-donor-one-pager.pdf" download class="btn btn-outline">Download Donor One-Pager</a>
+              <a href="edgen-donor-faq.pdf" download class="btn btn-outline">Download Donor FAQ</a>
+            </div>
+          </div>
+        </div>
+
+        <div id="tab-schools" class="tab-content" style="display:none;">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;" class="responsive-split">
+            <div>
+              <h3 style="margin-bottom:16px;">Schools: Partner with EdGen</h3>
+              <p style="color:var(--muted);margin-bottom:16px;line-height:1.7;">Yeshivos, Bais Yaakovs, and Jewish day schools in participating states can partner with EdGen to ensure their families have access to FSTC scholarships. EdGen handles donor intake, family application, income verification, and scholarship disbursement.</p>
+              <p style="color:var(--muted);margin-bottom:16px;line-height:1.7;">Schools do not need to build any systems or handle any compliance directly. EdGen is the full-service backend — you provide enrollment verification, and we do the rest.</p>
+              <p style="color:var(--muted);margin-bottom:24px;line-height:1.7;">School onboarding is free. Schools that partner with EdGen will be listed in our school directory when the program launches.</p>
+              <a href="contact.html" class="btn btn-primary">Contact us to partner →</a>
+            </div>
+            <div style="display:grid;gap:12px;">
+              <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:20px;">
+                <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--gold);margin-bottom:12px;">What schools provide</p>
+                <ul style="display:grid;gap:8px;">
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> School name, address, and contact information</li>
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> Grade range and tuition schedule</li>
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> Student enrollment verification upon request</li>
+                  <li style="display:flex;gap:8px;font-size:14px;color:var(--muted);"><span style="color:var(--gold);font-weight:700;">→</span> A designated EdGen contact on school staff</li>
+                </ul>
+              </div>
+              <a href="edgen-school-participation-packet.pdf" download class="btn btn-outline">Download School Participation Packet</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================
+         FAQ
+         ==================================================== -->
+    <section class="section section-white" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header centered fade-in">
+          <p class="eyebrow">Frequently asked questions</p>
+          <h2 id="faq-heading">Program FAQ</h2>
+        </div>
+
+        <div style="max-width:800px;margin-inline:auto;" class="fade-in">
+
+          <div class="faq-item open">
+            <button class="faq-question">
+              Is the FSTC the same as a school voucher?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. The FSTC is a federal tax credit for donations to eligible Scholarship Granting Organizations — it is not a government voucher or direct government payment to private schools. Scholarship funds flow from donors through an SGO (EdGen) to families, based on demonstrated need. See our <em>FSTC Is Not a Voucher</em> brief for precise language suitable for policy and community conversations.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Can a donor designate their contribution for a specific child?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. Per IRS rules governing SGOs, contributions cannot be earmarked for a specific student. Donors may optionally designate their contribution toward a school, school system, city, or state — but this is a preference, not a guarantee, and the final allocation decision rests with EdGen in accordance with program rules.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What if my family lives in a state that has not opted in?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Families in states that have not opted in are not currently eligible for FSTC scholarships from EdGen. However, the opt-in list is growing — check back for updates, or download our State Opt-In Tracker. If your child attends school in a different state than your home state, the rules regarding which state determines eligibility await final IRS/Treasury guidance.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How is the 300% AMI threshold calculated?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>The Area Median Income (AMI) is set annually by the U.S. Department of Housing and Urban Development (HUD) at the county or metropolitan statistical area level. It adjusts for household size. For FSTC eligibility, a household's income must fall at or below 300% of the applicable AMI. The map on this page shows the 2026 HUD 300% AMI threshold for a 4-person household by county. Your actual threshold may vary by household size.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              When will EdGen start accepting donations and processing applications?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>EdGen's program launches January 1, 2027. You can submit an early scholarship application now — it will be reviewed when the program goes live. Donors can submit their intent to give now; actual donations will be processed when the program launches. No payments, IVES verification, or legal obligations are created by submitting a pre-launch application or intent to give.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What is IVES and why does EdGen use it?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>IVES stands for the IRS Income Verification Express Service — a program that allows authorized third parties to retrieve IRS tax transcripts on behalf of taxpayers who provide consent. EdGen uses IVES to verify household income in a secure, official manner, without requiring families to submit sensitive financial documents directly. IVES integration is not active during the pre-launch phase.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Does EdGen charge families or schools any fees?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No. EdGen charges 0% administrative fees. Applications are free for families, and school onboarding is free for schools. EdGen's administrative costs are covered by philanthropic support, separate from the FSTC donation pool — so 100% of donor contributions go directly to scholarship awards.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What schools are eligible?
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6l5 5 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>EdGen serves yeshivos, Bais Yaakovs, and Jewish day schools in states that have opted in to the FSTC. Schools must be eligible K–12 private schools under program rules. The specific school eligibility criteria — including accreditation requirements and operational requirements — are subject to final IRS/Treasury guidance. EdGen will maintain an updated list of eligible schools when the program launches.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner" aria-labelledby="program-cta-heading">
+      <div class="cta-banner-inner fade-in">
+        <p class="eyebrow" style="text-align:center;">Get started</p>
+        <h2 id="program-cta-heading">Ready to take the next step?</h2>
+        <p>Apply for a scholarship, submit your intent to give, or contact EdGen with questions about the program.</p>
+        <div class="cta-banner-actions">
+          <a href="apply.html" class="btn btn-primary btn-lg">Apply for a scholarship</a>
+          <a href="donate.html" class="btn btn-secondary btn-lg">Make a donation</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Contact us</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-col">
+          <img class="footer-logo" src="edgen-logo-header.png" alt="EdGen" />
+          <p class="footer-tagline">EdGen is a 501(c)(3) Scholarship Granting Organization for the Federal Scholarship Tax Credit, serving Orthodox Jewish families across the United States.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Program</h4>
+          <ul>
+            <li><a href="program.html">How it works</a></li>
+            <li><a href="program.html#ami-map">AMI eligibility map</a></li>
+            <li><a href="program.html#states">Participating states</a></li>
+            <li><a href="program.html#expenses">Eligible expenses</a></li>
+            <li><a href="program.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About EdGen</a></li>
+            <li><a href="about.html#leadership">Leadership</a></li>
+            <li><a href="about.html#vision">Vision &amp; Mission</a></li>
+            <li><a href="about.html#history">Our Story</a></li>
+            <li><a href="resources.html">Resource library</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Act now</h4>
+          <ul>
+            <li><a href="apply.html">Apply for a scholarship</a></li>
+            <li><a href="donate.html">Make a donation</a></li>
+            <li><a href="contact.html">Partner with us</a></li>
+            <li><a href="contact.html">Contact EdGen</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 EdGen — Education Generation, Inc. · 501(c)(3) · All rights reserved.<br />EdGen does not provide legal, tax, accounting, or program eligibility advice.</p>
+        <span class="footer-prelaunch">Pre-launch — Program launches January 1, 2027</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js"></script>
+  <script src="edgen-ami-map-v3.js"></script>
+  <script>
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+    const mobileAboutSubmenu = document.getElementById('mobileAboutSubmenu');
+    if (mobileDropdownToggle) {
+      mobileDropdownToggle.addEventListener('click', () => {
+        const isOpen = mobileAboutSubmenu.style.display !== 'none';
+        mobileAboutSubmenu.style.display = isOpen ? 'none' : 'block';
+        mobileDropdownToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+
+    // Tabs
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.dataset.tab;
+        document.querySelectorAll('.tab-btn').forEach(b => {
+          b.classList.remove('active');
+          b.style.color = 'var(--muted)';
+          b.style.borderBottomColor = 'transparent';
+        });
+        btn.classList.add('active');
+        btn.style.color = 'var(--navy)';
+        btn.style.borderBottomColor = 'var(--gold)';
+        document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+        document.getElementById('tab-' + tab).style.display = 'block';
+      });
+    });
+    // Init active tab style
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab) { activeTab.style.color = 'var(--navy)'; activeTab.style.borderBottomColor = 'var(--gold)'; }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+
+    // Scroll fade-in
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    } else {
+      document.querySelectorAll('.fade-in').forEach(el => el.classList.add('visible'));
+    }
+  </script>
+</body>
+</html>

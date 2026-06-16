@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resource Library | EdGen</title>
+  <meta name="description" content="Download FSTC guides for families, donors, schools, and community leaders. 12 resources covering eligibility, tax credits, school participation, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="edgen-icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .filter-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn { padding: 8px 18px; border: 1.5px solid var(--border-strong); border-radius: 20px; font-size: 13px; font-weight: 600; color: var(--muted); background: white; cursor: pointer; transition: all 0.15s; }
+    .filter-btn.active, .filter-btn:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .filter-btn.active { border-color: var(--gold); background: var(--gold); color: var(--navy); }
+    .resource-card[data-audience] { transition: opacity 0.2s, transform 0.2s; }
+    .resource-card.hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand" aria-label="EdGen home">
+        <img class="brand-logo" src="edgen-logo-header.png" alt="EdGen — Education Generation" />
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="program.html" class="nav-link">Program info</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            About us
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#vision">Vision &amp; Mission</a>
+            <a href="about.html#history">Our Story</a>
+          </div>
+        </div>
+        <a href="resources.html" class="nav-link active">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="donate.html" class="nav-donate">Donate</a>
+        <a href="apply.html" class="nav-apply">Apply now →</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="program.html">Program info</a>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">About us</button>
+      <div class="mobile-submenu" id="mobileAboutSubmenu" style="display:none;">
+        <a href="about.html#leadership">Leadership</a>
+        <a href="about.html#vision">Vision &amp; Mission</a>
+        <a href="about.html#history">Our Story</a>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-mobile-actions">
+        <a href="donate.html" class="btn btn-outline" style="color:var(--gold);border-color:var(--gold);">Donate</a>
+        <a href="apply.html" class="btn btn-primary">Apply now →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Resource Library</p>
+        <h1>FSTC Guides for Every Audience</h1>
+        <p>Download plain-language resources on the Federal Scholarship Tax Credit — designed for families, donors, schools, and community leaders. All materials are free to share.</p>
+      </div>
+    </div>
+
+    <section class="section section-warm" aria-labelledby="library-heading">
+      <div class="container">
+        <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-bottom:20px;">
+          <div>
+            <h2 id="library-heading" class="sr-only">Full resource library</h2>
+            <p class="eyebrow">Filter by audience</p>
+          </div>
+          <p style="font-size:14px;color:var(--muted);">12 resources · All free to download</p>
+        </div>
+
+        <div class="filter-bar" role="group" aria-label="Filter resources by audience">
+          <button class="filter-btn active" data-filter="all">All resources</button>
+          <button class="filter-btn" data-filter="families">Families</button>
+          <button class="filter-btn" data-filter="donors">Donors</button>
+          <button class="filter-btn" data-filter="schools">Schools</button>
+          <button class="filter-btn" data-filter="community">Community</button>
+        </div>
+
+        <div class="grid-3" id="resourceGrid">
+
+          <a href="edgen-fstc-one-page-overview.pdf" download class="resource-card" data-audience="all" aria-label="Download FSTC One-Page Overview">
+            <div class="resource-card-num">01</div>
+            <h3>FSTC One-Page Overview</h3>
+            <p>A high-level introduction for all audiences covering what the FSTC is, who qualifies, and how EdGen connects donors, families, and schools to make it work.</p>
+            <span class="resource-tag">All audiences</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-donor-one-pager.pdf" download class="resource-card" data-audience="donors" aria-label="Download Donor One-Pager">
+            <div class="resource-card-num">02</div>
+            <h3>Donor One-Pager</h3>
+            <p>A simple, shareable explanation of the donor opportunity: how the 100% federal tax credit works, how to give through EdGen, and what happens next.</p>
+            <span class="resource-tag">Donors</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-parent-faq.pdf" download class="resource-card" data-audience="families" aria-label="Download Parent FAQ">
+            <div class="resource-card-num">03</div>
+            <h3>Parent FAQ</h3>
+            <p>Common questions from families about applying for a scholarship, AMI eligibility thresholds, what scholarships can cover, and what to expect from the application process.</p>
+            <span class="resource-tag">Families</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-donor-faq.pdf" download class="resource-card" data-audience="donors" aria-label="Download Donor FAQ">
+            <div class="resource-card-num">04</div>
+            <h3>Donor FAQ</h3>
+            <p>Detailed answers on tax-credit mechanics, designation options, documentation requirements, and guidance on still-pending IRS/Treasury questions affecting donor decisions.</p>
+            <span class="resource-tag">Donors</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-school-participation-packet.pdf" download class="resource-card" data-audience="schools" aria-label="Download School Participation Packet">
+            <div class="resource-card-num">05</div>
+            <h3>School Participation Packet</h3>
+            <p>Everything yeshivos, Bais Yaakovs, and day schools need to know about partnering with EdGen: onboarding process, data requirements, and what to expect from the scholarship pipeline.</p>
+            <span class="resource-tag">Schools</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-application-document-checklist.pdf" download class="resource-card" data-audience="families" aria-label="Download Application Document Checklist">
+            <div class="resource-card-num">06</div>
+            <h3>Application Document Checklist</h3>
+            <p>A clear, step-by-step list of what families should gather before submitting an EdGen scholarship application — from income records to student enrollment documentation.</p>
+            <span class="resource-tag">Families</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-tax-credit-vs-deduction-explainer.pdf" download class="resource-card" data-audience="all" aria-label="Download Tax Credit vs. Deduction Explainer">
+            <div class="resource-card-num">07</div>
+            <h3>Tax Credit vs. Deduction</h3>
+            <p>A clear explanation of why the FSTC's 100% tax credit is categorically different — and more valuable — than a charitable deduction. Useful for donor conversations and community education.</p>
+            <span class="resource-tag">All audiences</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-zero-admin-fee-overview.pdf" download class="resource-card" data-audience="all" aria-label="Download 0% Admin Fee Overview">
+            <div class="resource-card-num">08</div>
+            <h3>0% Admin Fee Overview</h3>
+            <p>How EdGen's 0% administrative fee model works, how it's funded separately by philanthropic support, and why it means every donor dollar goes directly to scholarship awards.</p>
+            <span class="resource-tag">All audiences</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-cash-flow-timeline.pdf" download class="resource-card" data-audience="donors" aria-label="Download Cash-Flow Timeline">
+            <div class="resource-card-num">09</div>
+            <h3>Cash-Flow Timeline</h3>
+            <p>A visual timeline showing when donors give, when tax credits are claimed, and when scholarship awards reach eligible families and schools. Helps donors plan their giving.</p>
+            <span class="resource-tag">Donors</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-fstc-is-not-a-voucher.pdf" download class="resource-card" data-audience="community" aria-label="Download FSTC Is Not a Voucher">
+            <div class="resource-card-num">10</div>
+            <h3>FSTC Is Not a Voucher</h3>
+            <p>Clear, accurate, and policy-precise language for community and policy conversations about how the FSTC works — and why it is structurally different from a government school voucher.</p>
+            <span class="resource-tag">Community</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-state-opt-in-tracker.pdf" download class="resource-card" data-audience="all" aria-label="Download State Opt-In Tracker">
+            <div class="resource-card-num">11</div>
+            <h3>State Opt-In Tracker</h3>
+            <p>Which states have opted in to the FSTC, what opt-in means for families and donors, how to check for updates, and what to do if your state is not yet on the list.</p>
+            <span class="resource-tag">All audiences</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+          <a href="edgen-community-leader-briefing-memo.pdf" download class="resource-card" data-audience="community" aria-label="Download Community Leader Briefing Memo">
+            <div class="resource-card-num">12</div>
+            <h3>Community Leader Briefing Memo</h3>
+            <p>Talking points and program background for rabbanim, board members, school administrators, and communal leaders who need to explain or champion the FSTC in their communities.</p>
+            <span class="resource-tag">Community</span>
+            <div class="download-icon">⬇ Download PDF</div>
+          </a>
+
+        </div>
+
+        <!-- CTA -->
+        <div style="margin-top:60px;background:var(--navy);border-radius:var(--radius-xl);padding:40px 36px;text-align:center;">
+          <p class="eyebrow" style="color:var(--gold);">Need something more specific?</p>
+          <h3 style="color:white;font-size:24px;margin-bottom:12px;">Request a custom briefing</h3>
+          <p style="color:rgba(255,255,255,0.7);margin-bottom:24px;max-width:480px;margin-inline:auto;">EdGen can prepare custom briefings for Federations, kehillos, school boards, and community leadership teams. Contact us to discuss what you need.</p>
+          <a href="contact.html" class="btn btn-primary btn-lg">Request a briefing →</a>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-col">
+          <img class="footer-logo" src="edgen-logo-header.png" alt="EdGen" />
+          <p class="footer-tagline">EdGen is a 501(c)(3) Scholarship Granting Organization for the Federal Scholarship Tax Credit, serving Orthodox Jewish families across the United States.</p>
+        </div>
+        <div class="footer-col"><h4>Program</h4><ul><li><a href="program.html">How it works</a></li><li><a href="program.html#ami-map">AMI eligibility map</a></li><li><a href="program.html#states">Participating states</a></li></ul></div>
+        <div class="footer-col"><h4>Organization</h4><ul><li><a href="about.html">About EdGen</a></li><li><a href="about.html#leadership">Leadership</a></li><li><a href="resources.html">Resource library</a></li></ul></div>
+        <div class="footer-col"><h4>Act now</h4><ul><li><a href="apply.html">Apply for a scholarship</a></li><li><a href="donate.html">Make a donation</a></li><li><a href="contact.html">Contact EdGen</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 EdGen — Education Generation, Inc. · 501(c)(3) · All rights reserved.</p>
+        <span class="footer-prelaunch">Pre-launch — Program launches January 1, 2027</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    const mdt = document.querySelector('.mobile-dropdown-toggle');
+    const mas = document.getElementById('mobileAboutSubmenu');
+    if (mdt) mdt.addEventListener('click', () => { const o = mas.style.display !== 'none'; mas.style.display = o ? 'none' : 'block'; });
+
+    // Filter
+    const AUDIENCE_MAP = {
+      all: () => true,
+      families: d => d === 'families' || d === 'all',
+      donors: d => d === 'donors' || d === 'all',
+      schools: d => d === 'schools' || d === 'all',
+      community: d => d === 'community' || d === 'all'
+    };
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.resource-card').forEach(card => {
+          const audience = card.dataset.audience;
+          const show = AUDIENCE_MAP[filter] ? AUDIENCE_MAP[filter](audience) : true;
+          card.classList.toggle('hidden', !show);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

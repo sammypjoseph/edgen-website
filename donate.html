@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate | EdGen</title>
+  <meta name="description" content="Make a donation to EdGen and receive a 100% federal tax credit — up to $1,700 single or $3,400 married filing jointly. 0% admin fee. 100% to scholarships." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="edgen-icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .donate-layout { display: grid; grid-template-columns: 1fr 340px; gap: 40px; align-items: start; padding-block: clamp(48px, 5vw, 72px); }
+    .donate-steps { display: grid; gap: 28px; }
+    .donate-step { border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 28px; background: white; }
+    .donate-step-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: white; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; flex-shrink: 0; }
+    .donate-step h3 { font-size: 18px; margin: 0; }
+    .donate-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 20px; }
+    .credit-explainer { background: var(--navy); border-radius: var(--radius-lg); padding: 28px; color: white; }
+    .credit-explainer h4 { color: white; font-size: 18px; margin-bottom: 20px; }
+    .credit-step { display: flex; gap: 12px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .credit-step:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .credit-step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--navy); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .credit-step p { font-size: 13.5px; color: rgba(255,255,255,0.8); line-height: 1.5; margin: 0; }
+    .credit-step strong { display: block; color: white; font-size: 14px; font-weight: 600; margin-bottom: 3px; }
+    .designation-row { display: grid; grid-template-columns: 1fr 1fr auto; gap: 10px; align-items: end; padding: 14px; background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); }
+    .designation-totals { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.25); border-radius: var(--radius); font-size: 14px; font-weight: 600; }
+    @media (max-width: 900px) { .donate-layout { grid-template-columns: 1fr; } .donate-sidebar { position: static; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand" aria-label="EdGen home">
+        <img class="brand-logo" src="edgen-logo-header.png" alt="EdGen — Education Generation" />
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="program.html" class="nav-link">Program info</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            About us
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#vision">Vision &amp; Mission</a>
+            <a href="about.html#history">Our Story</a>
+          </div>
+        </div>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="donate.html" class="nav-donate" style="color:var(--gold-light);">Donate</a>
+        <a href="apply.html" class="nav-apply">Apply now →</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="program.html">Program info</a>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">About us</button>
+      <div class="mobile-submenu" id="mobileAboutSubmenu" style="display:none;">
+        <a href="about.html#leadership">Leadership</a>
+        <a href="about.html#vision">Vision &amp; Mission</a>
+        <a href="about.html#history">Our Story</a>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-mobile-actions">
+        <a href="donate.html" class="btn btn-outline" style="color:var(--gold);border-color:var(--gold);">Donate</a>
+        <a href="apply.html" class="btn btn-primary">Apply now →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Donation Portal</p>
+        <h1>Make a Difference.<br />Get a Full Tax Credit.</h1>
+        <p>Contribute to EdGen and receive a 100% federal tax credit — up to $1,700 for single filers, $3,400 for married filing jointly. Your entire contribution goes to scholarships for eligible Jewish K–12 students. Zero net cost to you.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Pre-launch alert -->
+      <div class="alert alert-gold" style="margin-block:24px;" role="alert">
+        <span class="alert-icon">ℹ</span>
+        <div>
+          <strong>Donation processing launches January 1, 2027.</strong> Submit your intent to give now and we'll contact you when contributions open. No payment is processed during the pre-launch period.
+        </div>
+        <button class="dismiss-btn" aria-label="Dismiss alert" onclick="this.closest('.alert').style.display='none'">×</button>
+      </div>
+
+      <div class="donate-layout">
+
+        <!-- Form -->
+        <div>
+          <!-- Success state -->
+          <div class="success-card" id="successCard" role="alert">
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h2>Intent to give recorded</h2>
+            <p>Thank you, <strong id="successName"></strong>. We've recorded your intent to give <strong id="successAmount"></strong>. You'll receive confirmation at <strong id="successEmail"></strong> and we'll contact you when donation processing opens on January 1, 2027.</p>
+            <a href="resources.html" class="btn btn-primary" style="margin-top:8px;">Explore the resource library</a>
+          </div>
+
+          <form id="donateForm" novalidate>
+            <div class="donate-steps">
+
+              <!-- Step 1: Amount -->
+              <div class="donate-step">
+                <div class="donate-step-header">
+                  <div class="step-num">1</div>
+                  <h3>Select your gift amount</h3>
+                </div>
+
+                <div class="amount-grid" id="amountGrid">
+                  <button type="button" class="amount-btn" data-amount="1700">$1,700</button>
+                  <button type="button" class="amount-btn selected" data-amount="3400">$3,400</button>
+                  <button type="button" class="amount-btn" data-amount="5000">$5,000</button>
+                  <button type="button" class="amount-btn" data-amount="10000">$10,000</button>
+                  <button type="button" class="amount-btn other-btn" data-amount="other">Other amount</button>
+                </div>
+
+                <div id="otherAmountWrap" style="display:none;margin-top:10px;">
+                  <div class="form-group">
+                    <label for="otherAmount">Enter your gift amount</label>
+                    <div style="position:relative;">
+                      <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600;">$</span>
+                      <input type="number" id="otherAmount" name="otherAmount" class="form-input" style="padding-left:26px;" min="100" placeholder="Minimum $100" />
+                    </div>
+                    <span class="form-error" id="err-otherAmount"></span>
+                  </div>
+                </div>
+
+                <div class="tax-callout" id="taxCallout" style="margin-top:16px;">
+                  Your <strong id="calloutAmount">$3,400</strong> contribution = <strong style="color:var(--gold);">$0 net cost</strong> after your 100% federal tax credit.
+                </div>
+
+                <div style="margin-top:14px;">
+                  <p style="font-size:13px;color:var(--muted);">Your filing status changes which preset is highlighted:</p>
+                  <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap;">
+                    <button type="button" class="filing-btn active" data-filing="single" style="padding:8px 16px;font-size:13px;font-weight:600;border-radius:6px;border:1.5px solid var(--border-strong);background:white;color:var(--muted);cursor:pointer;">Single ($1,700)</button>
+                    <button type="button" class="filing-btn" data-filing="mfj" style="padding:8px 16px;font-size:13px;font-weight:600;border-radius:6px;border:1.5px solid var(--gold);background:var(--gold-pale);color:var(--navy);cursor:pointer;">Married Filing Jointly ($3,400)</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2: Designation -->
+              <div class="donate-step">
+                <div class="donate-step-header">
+                  <div class="step-num">2</div>
+                  <h3>School designation <span style="font-family:var(--font-body);font-size:13px;font-weight:400;color:var(--muted);">(optional)</span></h3>
+                </div>
+                <p style="font-size:14px;color:var(--muted);margin-bottom:18px;line-height:1.6;">You may optionally designate your contribution toward a specific school, school system, city, or state. Designations are preferences only and cannot be guaranteed per IRS rules prohibiting earmarks for specific students.</p>
+
+                <label class="form-check" style="margin-bottom:16px;">
+                  <input type="checkbox" id="designateToggle" />
+                  <span style="font-weight:600;">I want to designate my contribution</span>
+                </label>
+
+                <div id="designationBuilder" style="display:none;margin-top:16px;">
+                  <div id="designationRows" style="display:grid;gap:12px;">
+                    <div class="designation-row" id="desig-row-1">
+                      <div class="form-group">
+                        <label for="desig-type-1">Designation type</label>
+                        <select id="desig-type-1" name="desig-type-1" class="form-select">
+                          <option value="">Select type</option>
+                          <option>Specific school</option>
+                          <option>School system</option>
+                          <option>City</option>
+                          <option>State</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="desig-val-1">School / location</label>
+                        <input type="text" id="desig-val-1" name="desig-val-1" class="form-input" placeholder="Search for a school or enter a city/state" />
+                      </div>
+                      <div class="form-group">
+                        <label for="desig-amt-1">Amount ($)</label>
+                        <input type="number" id="desig-amt-1" name="desig-amt-1" class="form-input" min="1" placeholder="$" oninput="updateDesigTotal()" />
+                      </div>
+                    </div>
+                  </div>
+                  <button type="button" id="addDesigBtn" class="btn btn-outline btn-sm" style="margin-top:10px;">+ Add another designation</button>
+                  <div class="designation-totals" style="margin-top:14px;">
+                    <span>Designated: <strong id="desigTotal" style="color:var(--navy);">$0</strong></span>
+                    <span>Gift total: <strong id="desigGiftTotal" style="color:var(--navy);">$3,400</strong></span>
+                    <span id="desigRemainder" style="font-size:13px;color:var(--muted);">Remainder to general fund: <strong>$3,400</strong></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3: Donor Info -->
+              <div class="donate-step">
+                <div class="donate-step-header">
+                  <div class="step-num">3</div>
+                  <h3>Donor information</h3>
+                </div>
+                <div style="display:grid;gap:18px;">
+                  <div class="form-grid-2">
+                    <div class="form-group">
+                      <label for="donorFirst">First name <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                      <input type="text" id="donorFirst" name="donorFirst" class="form-input" autocomplete="given-name" required />
+                      <span class="form-error" id="err-donorFirst"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="donorLast">Last name <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                      <input type="text" id="donorLast" name="donorLast" class="form-input" autocomplete="family-name" required />
+                      <span class="form-error" id="err-donorLast"></span>
+                    </div>
+                  </div>
+                  <div class="form-grid-2">
+                    <div class="form-group">
+                      <label for="donorEmail">Email <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                      <input type="email" id="donorEmail" name="donorEmail" class="form-input" autocomplete="email" required />
+                      <span class="form-error" id="err-donorEmail"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="donorPhone">Phone</label>
+                      <input type="tel" id="donorPhone" name="donorPhone" class="form-input" autocomplete="tel" />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="donorAddress">Mailing address (for tax documentation)</label>
+                    <input type="text" id="donorAddress" name="donorAddress" class="form-input" autocomplete="street-address" />
+                  </div>
+                  <div class="form-grid-2">
+                    <div class="form-group">
+                      <label for="donorCity">City</label>
+                      <input type="text" id="donorCity" name="donorCity" class="form-input" autocomplete="address-level2" />
+                    </div>
+                    <div class="form-group">
+                      <label for="donorState">State</label>
+                      <select id="donorState" name="donorState" class="form-select">
+                        <option value="">Select state</option>
+                        <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="donorFilingStatus">Tax filing status <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                    <select id="donorFilingStatus" name="donorFilingStatus" class="form-select" required>
+                      <option value="">Select status</option>
+                      <option value="single">Single</option>
+                      <option value="mfj">Married Filing Jointly</option>
+                    </select>
+                    <span class="form-error" id="err-donorFilingStatus"></span>
+                  </div>
+                  <label class="form-check" id="businessCheckWrap">
+                    <input type="checkbox" id="isBusiness" />
+                    <span>I am giving on behalf of a business or foundation</span>
+                  </label>
+                  <div id="entityNameWrap" style="display:none;">
+                    <div class="form-group">
+                      <label for="entityName">Entity name</label>
+                      <input type="text" id="entityName" name="entityName" class="form-input" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4: Acknowledgment -->
+              <div class="donate-step">
+                <div class="donate-step-header">
+                  <div class="step-num">4</div>
+                  <h3>Acknowledgments</h3>
+                </div>
+                <div style="display:grid;gap:14px;">
+                  <label class="form-check">
+                    <input type="checkbox" id="dAck1" required />
+                    <span>I understand this is a pre-launch intent to give. No payment will be processed until the program launches January 1, 2027.</span>
+                  </label>
+                  <span class="form-error" id="err-dAck1"></span>
+                  <label class="form-check">
+                    <input type="checkbox" id="dAck2" required />
+                    <span>I understand that the FSTC is subject to IRS/Treasury guidance and my credit amount may be adjusted based on final rules.</span>
+                  </label>
+                  <span class="form-error" id="err-dAck2"></span>
+                  <label class="form-check">
+                    <input type="checkbox" id="dAck3" required />
+                    <span>I understand that designations are preferences only and cannot be guaranteed under IRS rules governing SGOs.</span>
+                  </label>
+                  <span class="form-error" id="err-dAck3"></span>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-full btn-lg" id="donateSubmitBtn">Submit donation intent</button>
+              <p style="font-size:12px;color:var(--muted);text-align:center;">No payment is processed. This records your intent to give. EdGen does not sell or share your information.</p>
+
+            </div>
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="donate-sidebar" aria-label="Donation support">
+          <div class="credit-explainer">
+            <h4>How the tax credit works</h4>
+            <div class="credit-step">
+              <div class="credit-step-num">1</div>
+              <div><strong>You give to EdGen</strong><p>You contribute any amount up to your credit cap ($1,700 single / $3,400 MFJ) to EdGen's scholarship fund.</p></div>
+            </div>
+            <div class="credit-step">
+              <div class="credit-step-num">2</div>
+              <div><strong>Your credit is applied</strong><p>When you file your federal taxes, you claim a 100% federal tax credit equal to your contribution — reducing your tax bill dollar for dollar.</p></div>
+            </div>
+            <div class="credit-step">
+              <div class="credit-step-num">3</div>
+              <div><strong>Scholarships are awarded</strong><p>100% of your contribution (less nothing, since EdGen charges 0% admin) goes to eligible scholarship recipients at qualified schools.</p></div>
+            </div>
+          </div>
+
+          <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);">
+            <h4 style="font-size:16px;margin-bottom:14px;">Download resources</h4>
+            <div style="display:grid;gap:10px;">
+              <a href="edgen-donor-one-pager.pdf" download class="btn btn-outline btn-sm">Donor One-Pager</a>
+              <a href="edgen-donor-faq.pdf" download class="btn btn-outline btn-sm">Donor FAQ</a>
+              <a href="edgen-tax-credit-vs-deduction-explainer.pdf" download class="btn btn-outline btn-sm">Tax Credit vs. Deduction</a>
+              <a href="edgen-cash-flow-timeline.pdf" download class="btn btn-outline btn-sm">Cash-Flow Timeline</a>
+            </div>
+          </div>
+
+          <div style="background:white;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;box-shadow:var(--shadow-sm);">
+            <h4 style="font-size:16px;margin-bottom:10px;">Questions?</h4>
+            <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px;line-height:1.55;">Contact our donor team. We aim to respond within 3 business days.</p>
+            <a href="mailto:donors@edgeneration.org" class="btn btn-primary btn-sm" style="width:100%;text-align:center;">donors@edgeneration.org</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-col">
+          <img class="footer-logo" src="edgen-logo-header.png" alt="EdGen" />
+          <p class="footer-tagline">EdGen is a 501(c)(3) Scholarship Granting Organization for the Federal Scholarship Tax Credit, serving Orthodox Jewish families across the United States.</p>
+        </div>
+        <div class="footer-col"><h4>Program</h4><ul><li><a href="program.html">How it works</a></li><li><a href="program.html#ami-map">AMI eligibility map</a></li></ul></div>
+        <div class="footer-col"><h4>Organization</h4><ul><li><a href="about.html">About EdGen</a></li><li><a href="resources.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div class="footer-col"><h4>Act now</h4><ul><li><a href="apply.html">Apply for a scholarship</a></li><li><a href="donate.html">Make a donation</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 EdGen — Education Generation, Inc. · 501(c)(3) · All rights reserved.</p>
+        <span class="footer-prelaunch">Pre-launch — Program launches January 1, 2027</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    const mdt = document.querySelector('.mobile-dropdown-toggle');
+    const mas = document.getElementById('mobileAboutSubmenu');
+    if (mdt) mdt.addEventListener('click', () => { const o = mas.style.display !== 'none'; mas.style.display = o ? 'none' : 'block'; });
+
+    // Amount selection
+    let selectedAmount = 3400;
+    function formatDollar(n) { return new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n); }
+    function updateCallout() {
+      let amt = selectedAmount === 'other' ? (parseFloat(document.getElementById('otherAmount').value)||0) : selectedAmount;
+      document.getElementById('calloutAmount').textContent = formatDollar(amt);
+      document.getElementById('desigGiftTotal').textContent = formatDollar(amt);
+      updateDesigTotal();
+    }
+
+    document.querySelectorAll('.amount-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedAmount = btn.dataset.amount === 'other' ? 'other' : parseFloat(btn.dataset.amount);
+        document.getElementById('otherAmountWrap').style.display = selectedAmount === 'other' ? 'block' : 'none';
+        updateCallout();
+      });
+    });
+
+    document.getElementById('otherAmount')?.addEventListener('input', updateCallout);
+
+    // Filing status toggle
+    document.querySelectorAll('.filing-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filing-btn').forEach(b => {
+          b.classList.remove('active');
+          b.style.borderColor = 'var(--border-strong)';
+          b.style.background = 'white';
+          b.style.color = 'var(--muted)';
+        });
+        btn.classList.add('active');
+        btn.style.borderColor = 'var(--gold)';
+        btn.style.background = 'var(--gold-pale)';
+        btn.style.color = 'var(--navy)';
+        // Highlight recommended amount
+        const recommended = btn.dataset.filing === 'single' ? '1700' : '3400';
+        document.querySelectorAll('.amount-btn').forEach(ab => {
+          if (ab.dataset.amount === recommended && !ab.classList.contains('other-btn')) {
+            ab.click();
+          }
+        });
+      });
+    });
+
+    // Designation builder
+    document.getElementById('designateToggle').addEventListener('change', function() {
+      document.getElementById('designationBuilder').style.display = this.checked ? 'block' : 'none';
+    });
+
+    let desigCount = 1;
+    window.updateDesigTotal = function() {
+      let total = 0;
+      document.querySelectorAll('[id^="desig-amt-"]').forEach(inp => { total += parseFloat(inp.value)||0; });
+      document.getElementById('desigTotal').textContent = formatDollar(total);
+      const giftTotal = selectedAmount === 'other' ? (parseFloat(document.getElementById('otherAmount')?.value)||0) : (selectedAmount||0);
+      const rem = giftTotal - total;
+      const remEl = document.getElementById('desigRemainder');
+      remEl.innerHTML = `Remainder to general fund: <strong>${formatDollar(Math.max(0,rem))}</strong>`;
+      remEl.style.color = rem < 0 ? '#c0392b' : 'var(--muted)';
+    };
+
+    document.getElementById('addDesigBtn').addEventListener('click', () => {
+      desigCount++;
+      const n = desigCount;
+      const row = document.createElement('div');
+      row.className = 'designation-row';
+      row.id = `desig-row-${n}`;
+      row.innerHTML = `
+        <div class="form-group">
+          <label for="desig-type-${n}">Designation type</label>
+          <select id="desig-type-${n}" name="desig-type-${n}" class="form-select">
+            <option value="">Select type</option>
+            <option>Specific school</option><option>School system</option><option>City</option><option>State</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="desig-val-${n}">School / location</label>
+          <input type="text" id="desig-val-${n}" name="desig-val-${n}" class="form-input" placeholder="Search or enter" />
+        </div>
+        <div class="form-group">
+          <label for="desig-amt-${n}">Amount ($)</label>
+          <div style="display:flex;gap:6px;align-items:center;">
+            <input type="number" id="desig-amt-${n}" name="desig-amt-${n}" class="form-input" min="1" placeholder="$" oninput="updateDesigTotal()" />
+            <button type="button" onclick="document.getElementById('desig-row-${n}').remove();updateDesigTotal();" style="padding:8px;border:1px solid var(--border-strong);border-radius:6px;background:none;cursor:pointer;color:var(--muted);font-size:18px;line-height:1;flex-shrink:0;">×</button>
+          </div>
+        </div>`;
+      document.getElementById('designationRows').appendChild(row);
+    });
+
+    // Business toggle
+    document.getElementById('isBusiness').addEventListener('change', function() {
+      document.getElementById('entityNameWrap').style.display = this.checked ? 'block' : 'none';
+    });
+
+    // Validate + submit
+    function setErr(id, msg) {
+      const el = document.getElementById('err-'+id);
+      if (el) el.textContent = msg;
+      const inp = document.getElementById(id);
+      if (inp) inp.classList.toggle('error', !!msg);
+    }
+    function clearErrs() {
+      document.querySelectorAll('.form-error').forEach(e => e.textContent='');
+      document.querySelectorAll('.error').forEach(e => e.classList.remove('error'));
+    }
+
+    document.getElementById('donateForm').addEventListener('submit', e => {
+      e.preventDefault();
+      clearErrs();
+      let ok = true;
+      // Amount
+      if (selectedAmount === 'other') {
+        const oa = parseFloat(document.getElementById('otherAmount').value);
+        if (!oa || oa < 100) { setErr('otherAmount', 'Please enter an amount of at least $100.'); ok = false; }
+      }
+      // Donor info
+      const f = id => document.getElementById(id)?.value?.trim();
+      if (!f('donorFirst')) { setErr('donorFirst','Required.'); ok=false; }
+      if (!f('donorLast')) { setErr('donorLast','Required.'); ok=false; }
+      const email = f('donorEmail');
+      if (!email) { setErr('donorEmail','Please enter your email.'); ok=false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('donorEmail','Please enter a valid email.'); ok=false; }
+      if (!f('donorFilingStatus')) { setErr('donorFilingStatus','Required.'); ok=false; }
+      // Acks
+      ['dAck1','dAck2','dAck3'].forEach(id => {
+        if (!document.getElementById(id).checked) { setErr(id,'Required.'); ok=false; }
+      });
+      if (!ok) { document.querySelector('.form-error:not(:empty)')?.scrollIntoView({behavior:'smooth',block:'center'}); return; }
+      // Success
+      const name = f('donorFirst');
+      const amt = selectedAmount === 'other' ? parseFloat(document.getElementById('otherAmount').value) : selectedAmount;
+      document.getElementById('successName').textContent = name;
+      document.getElementById('successAmount').textContent = formatDollar(amt);
+      document.getElementById('successEmail').textContent = email;
+      document.getElementById('donateForm').style.display = 'none';
+      const sc = document.getElementById('successCard');
+      sc.classList.add('visible');
+      sc.scrollIntoView({behavior:'smooth',block:'center'});
+    });
+  </script>
+</body>
+</html>

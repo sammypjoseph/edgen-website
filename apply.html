@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply for a Scholarship | EdGen</title>
+  <meta name="description" content="Apply for an FSTC scholarship through EdGen. Pre-launch applications are open now. Program launches January 1, 2027." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" href="edgen-icon-192.png" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .apply-layout {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 40px;
+      align-items: start;
+      padding-block: clamp(48px, 5vw, 72px);
+    }
+    .apply-form-wrap { display: flex; flex-direction: column; gap: 32px; }
+    .apply-sidebar { position: sticky; top: 88px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .sidebar-card h4 { font-size: 16px; margin-bottom: 14px; color: var(--navy); }
+    .timeline-step { display: flex; gap: 12px; margin-bottom: 16px; }
+    .timeline-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .timeline-step p { font-size: 13.5px; color: var(--muted); line-height: 1.5; margin: 0; }
+    .timeline-step strong { display: block; font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+    .student-section { border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 24px; position: relative; background: var(--warm-white); }
+    .student-section-label {
+      position: absolute;
+      top: -12px;
+      left: 16px;
+      background: var(--warm-white);
+      padding: 0 8px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .remove-student {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      background: none;
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .remove-student:hover { color: #c0392b; border-color: #c0392b; }
+    @media (max-width: 900px) {
+      .apply-layout { grid-template-columns: 1fr; }
+      .apply-sidebar { position: static; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container site-header-inner">
+      <a href="index.html" class="brand" aria-label="EdGen home">
+        <img class="brand-logo" src="edgen-logo-header.png" alt="EdGen — Education Generation" />
+      </a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="program.html" class="nav-link">Program info</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+            About us
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="about.html#leadership">Leadership</a>
+            <a href="about.html#vision">Vision &amp; Mission</a>
+            <a href="about.html#history">Our Story</a>
+          </div>
+        </div>
+        <a href="resources.html" class="nav-link">Resources</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="donate.html" class="nav-donate">Donate</a>
+        <a href="apply.html" class="nav-apply active" style="background:var(--gold-light);">Apply now →</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+      <a href="program.html">Program info</a>
+      <button class="mobile-dropdown-toggle" aria-expanded="false">About us</button>
+      <div class="mobile-submenu" id="mobileAboutSubmenu" style="display:none;">
+        <a href="about.html#leadership">Leadership</a>
+        <a href="about.html#vision">Vision &amp; Mission</a>
+        <a href="about.html#history">Our Story</a>
+      </div>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+      <div class="nav-mobile-actions">
+        <a href="donate.html" class="btn btn-outline" style="color:var(--gold);border-color:var(--gold);">Donate</a>
+        <a href="apply.html" class="btn btn-primary">Apply now →</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <div class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Scholarship Application Portal</p>
+        <h1>Apply for an FSTC Scholarship</h1>
+        <p>Submit your pre-launch application now. Applications will be reviewed and processed when the EdGen program goes live on January 1, 2027. No income verification or payment is required during this pre-launch period.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Pre-launch alert -->
+      <div class="alert alert-gold" style="margin-block:24px;" role="alert" id="prelaunchAlert">
+        <span class="alert-icon">ℹ</span>
+        <div>
+          <strong>Early applications open.</strong> EdGen is accepting pre-launch applications. Submissions will be reviewed when the program launches. No income verification or payment is processed until the program is live. <a href="edgen-parent-faq.pdf" download style="color:var(--navy);font-weight:700;">Download the Parent FAQ →</a>
+        </div>
+        <button class="dismiss-btn" aria-label="Dismiss alert" onclick="this.closest('.alert').style.display='none'">×</button>
+      </div>
+
+      <div class="apply-layout">
+
+        <!-- Main form -->
+        <div class="apply-form-wrap">
+
+          <!-- Success state (hidden initially) -->
+          <div class="success-card" id="successCard" role="alert">
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <h2>Application received</h2>
+            <p>We'll contact you at <strong id="successEmail"></strong> when the program launches and your application is under review. Keep an eye on your inbox — we'll send a confirmation shortly.</p>
+            <a href="resources.html" class="btn btn-primary" style="margin-top:8px;">Explore the resource library</a>
+          </div>
+
+          <!-- Application form -->
+          <form id="applicationForm" novalidate>
+
+            <!-- Section 1: Parent/Guardian -->
+            <div class="form-fieldset" style="position:relative;">
+              <div class="form-legend">Section 1 — Parent / Guardian Information</div>
+              <div style="margin-top:8px;display:grid;gap:18px;">
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="parentFirst">First name <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                    <input type="text" id="parentFirst" name="parentFirst" class="form-input" autocomplete="given-name" required />
+                    <span class="form-error" id="err-parentFirst"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="parentLast">Last name <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                    <input type="text" id="parentLast" name="parentLast" class="form-input" autocomplete="family-name" required />
+                    <span class="form-error" id="err-parentLast"></span>
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="parentEmail">Email address <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                    <input type="email" id="parentEmail" name="parentEmail" class="form-input" autocomplete="email" required />
+                    <span class="form-error" id="err-parentEmail"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="parentPhone">Phone number</label>
+                    <input type="tel" id="parentPhone" name="parentPhone" class="form-input" autocomplete="tel" placeholder="(555) 000-0000" />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="parentStreet">Street address</label>
+                  <input type="text" id="parentStreet" name="parentStreet" class="form-input" autocomplete="street-address" />
+                </div>
+
+                <div class="form-grid-3">
+                  <div class="form-group">
+                    <label for="parentCity">City</label>
+                    <input type="text" id="parentCity" name="parentCity" class="form-input" autocomplete="address-level2" />
+                  </div>
+                  <div class="form-group">
+                    <label for="parentState">Home state <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                    <select id="parentState" name="parentState" class="form-select" required>
+                      <option value="">Select state</option>
+                      <option>Alabama</option><option>Alaska</option><option>Arkansas</option>
+                      <option>Colorado</option><option>Florida</option><option>Georgia</option>
+                      <option>Idaho</option><option>Indiana</option><option>Iowa</option>
+                      <option>Louisiana</option><option>Mississippi</option><option>Missouri</option>
+                      <option>Montana</option><option>Nebraska</option><option>Nevada</option>
+                      <option>New Hampshire</option><option>North Dakota</option><option>Ohio</option>
+                      <option>Oklahoma</option><option>South Carolina</option><option>South Dakota</option>
+                      <option>Tennessee</option><option>Texas</option><option>Utah</option>
+                      <option>Virginia</option><option>West Virginia</option><option>Wyoming</option>
+                      <option value="other">My state is not listed</option>
+                    </select>
+                    <span class="form-error" id="err-parentState"></span>
+                    <span class="hint">Only states currently opted in to the FSTC are listed. If your state is not listed, you may not be eligible at this time — but check back as more states opt in.</span>
+                  </div>
+                  <div class="form-group">
+                    <label for="parentZip">ZIP code</label>
+                    <input type="text" id="parentZip" name="parentZip" class="form-input" autocomplete="postal-code" inputmode="numeric" maxlength="10" />
+                  </div>
+                </div>
+
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="filingStatus">Tax filing status <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                    <select id="filingStatus" name="filingStatus" class="form-select" required>
+                      <option value="">Select status</option>
+                      <option value="single">Single</option>
+                      <option value="mfj">Married Filing Jointly</option>
+                      <option value="mfs">Married Filing Separately</option>
+                      <option value="hoh">Head of Household</option>
+                    </select>
+                    <span class="form-error" id="err-filingStatus"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="numDependents">Number of dependents in household</label>
+                    <input type="number" id="numDependents" name="numDependents" class="form-input" min="1" max="20" placeholder="e.g. 3" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2: Student Information -->
+            <div style="display:grid;gap:16px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;">
+                <h3 style="font-size:18px;margin:0;">Section 2 — Student Information</h3>
+                <p style="font-size:13px;color:var(--muted);margin:0;">Add each student who will apply for a scholarship.</p>
+              </div>
+
+              <div id="studentsContainer" style="display:grid;gap:20px;">
+                <!-- Student 1 (template) -->
+                <div class="student-section" id="student-1">
+                  <span class="student-section-label">Student 1</span>
+
+                  <div style="display:grid;gap:16px;margin-top:8px;">
+                    <div class="form-grid-2">
+                      <div class="form-group">
+                        <label for="s1-first">First name <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                        <input type="text" id="s1-first" name="s1-first" class="form-input" required />
+                        <span class="form-error" id="err-s1-first"></span>
+                      </div>
+                      <div class="form-group">
+                        <label for="s1-last">Last name <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                        <input type="text" id="s1-last" name="s1-last" class="form-input" required />
+                        <span class="form-error" id="err-s1-last"></span>
+                      </div>
+                    </div>
+
+                    <div class="form-grid-3">
+                      <div class="form-group">
+                        <label for="s1-dob">Date of birth</label>
+                        <input type="date" id="s1-dob" name="s1-dob" class="form-input" />
+                      </div>
+                      <div class="form-group">
+                        <label for="s1-grade">Current grade</label>
+                        <select id="s1-grade" name="s1-grade" class="form-select">
+                          <option value="">Select grade</option>
+                          <option>Nursery</option><option>Pre-K</option><option>Kindergarten</option>
+                          <option>1</option><option>2</option><option>3</option><option>4</option>
+                          <option>5</option><option>6</option><option>7</option><option>8</option>
+                          <option>9</option><option>10</option><option>11</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="s1-type">School type</label>
+                        <select id="s1-type" name="s1-type" class="form-select">
+                          <option value="">Select type</option>
+                          <option>Yeshiva</option>
+                          <option>Bais Yaakov</option>
+                          <option>Day School</option>
+                          <option>Other Jewish Day School</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                      <div class="form-group">
+                        <label for="s1-school">School name</label>
+                        <input type="text" id="s1-school" name="s1-school" class="form-input" placeholder="Enter school name" />
+                        <span class="hint">Searchable school database coming soon.</span>
+                      </div>
+                      <div class="form-group">
+                        <label for="s1-schoolState">School state</label>
+                        <select id="s1-schoolState" name="s1-schoolState" class="form-select">
+                          <option value="">Select state</option>
+                          <option>Alabama</option><option>Alaska</option><option>Arkansas</option>
+                          <option>Colorado</option><option>Florida</option><option>Georgia</option>
+                          <option>Idaho</option><option>Indiana</option><option>Iowa</option>
+                          <option>Louisiana</option><option>Mississippi</option><option>Missouri</option>
+                          <option>Montana</option><option>Nebraska</option><option>Nevada</option>
+                          <option>New Hampshire</option><option>North Dakota</option><option>Ohio</option>
+                          <option>Oklahoma</option><option>South Carolina</option><option>South Dakota</option>
+                          <option>Tennessee</option><option>Texas</option><option>Utah</option>
+                          <option>Virginia</option><option>West Virginia</option><option>Wyoming</option>
+                          <option value="other">State not listed</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="button" id="addStudentBtn" class="btn btn-outline" style="align-self:flex-start;">+ Add another student</button>
+            </div>
+
+            <!-- Section 3: Household Income -->
+            <div class="form-fieldset" style="position:relative;">
+              <div class="form-legend">Section 3 — Household Income</div>
+              <div style="margin-top:8px;display:grid;gap:18px;">
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label for="taxYear">Prior tax year</label>
+                    <select id="taxYear" name="taxYear" class="form-select">
+                      <option value="">Select year</option>
+                      <option value="2025">2025</option>
+                      <option value="2024">2024</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="estimatedAGI">Estimated household adjusted gross income (AGI) <span aria-hidden="true" style="color:#c0392b;">*</span></label>
+                    <div style="position:relative;">
+                      <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:600;">$</span>
+                      <input type="number" id="estimatedAGI" name="estimatedAGI" class="form-input" style="padding-left:26px;" min="0" placeholder="e.g. 120000" required />
+                    </div>
+                    <span class="form-error" id="err-estimatedAGI"></span>
+                  </div>
+                </div>
+
+                <div class="alert alert-gold">
+                  <span class="alert-icon">🔒</span>
+                  <div>
+                    <strong>Do not submit sensitive financial documents through this form.</strong> Income will be verified via IRS transcript (IVES) when the program launches. Providing an estimated AGI here helps us assess your preliminary eligibility — it does not substitute for formal income verification.
+                  </div>
+                </div>
+
+                <label class="form-check">
+                  <input type="checkbox" id="ivesAck" name="ivesAck" required />
+                  <span>I understand that income verification is required and will be completed as part of the full application process using IRS/IVES transcript services.</span>
+                </label>
+                <span class="form-error" id="err-ivesAck"></span>
+              </div>
+            </div>
+
+            <!-- Section 4: Acknowledgments -->
+            <div class="form-fieldset" style="position:relative;">
+              <div class="form-legend">Section 4 — Acknowledgments</div>
+              <div style="margin-top:8px;display:grid;gap:14px;">
+                <label class="form-check">
+                  <input type="checkbox" id="ack1" name="ack1" required />
+                  <span>I certify that the information provided in this application is accurate to the best of my knowledge.</span>
+                </label>
+                <span class="form-error" id="err-ack1"></span>
+
+                <label class="form-check">
+                  <input type="checkbox" id="ack2" name="ack2" required />
+                  <span>I understand this is a pre-launch application and does not guarantee a scholarship award. Submission does not create a legal obligation for EdGen or the applicant.</span>
+                </label>
+                <span class="form-error" id="err-ack2"></span>
+
+                <label class="form-check">
+                  <input type="checkbox" id="ack3" name="ack3" required />
+                  <span>I understand that final eligibility depends on federal law, state participation, IRS/Treasury guidance, and SGO review.</span>
+                </label>
+                <span class="form-error" id="err-ack3"></span>
+
+                <label class="form-check">
+                  <input type="checkbox" id="ack4" name="ack4" required />
+                  <span>I understand that contributions to EdGen cannot be earmarked for a specific student.</span>
+                </label>
+                <span class="form-error" id="err-ack4"></span>
+              </div>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn btn-primary btn-full btn-lg" id="submitBtn">
+              Submit application
+            </button>
+
+            <p style="font-size:12px;color:var(--muted);text-align:center;line-height:1.5;">
+              Pre-launch applications are stored securely and will be reviewed when the program launches January 1, 2027. EdGen does not sell or share your information.
+            </p>
+
+          </form>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="apply-sidebar" aria-label="Application support">
+
+          <div class="sidebar-card">
+            <h4>What happens next?</h4>
+            <div class="timeline-step">
+              <div class="timeline-dot">1</div>
+              <div><strong>Application received</strong><p>You'll get a confirmation at your email address.</p></div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot">2</div>
+              <div><strong>Program launches</strong><p>January 1, 2027 — EdGen begins processing applications and verifying income.</p></div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot">3</div>
+              <div><strong>Eligibility review</strong><p>We'll contact you to complete income verification via IRS/IVES and confirm school enrollment.</p></div>
+            </div>
+            <div class="timeline-step">
+              <div class="timeline-dot">4</div>
+              <div><strong>Award notification</strong><p>Eligible families receive scholarship award letters. Funds go directly to your school.</p></div>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Download resources</h4>
+            <div style="display:grid;gap:10px;">
+              <a href="edgen-parent-faq.pdf" download class="btn btn-outline btn-sm">Parent FAQ</a>
+              <a href="edgen-application-document-checklist.pdf" download class="btn btn-outline btn-sm">Application Checklist</a>
+              <a href="edgen-fstc-one-page-overview.pdf" download class="btn btn-outline btn-sm">FSTC Overview</a>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
+            <h4>Questions?</h4>
+            <p style="font-size:13.5px;color:var(--muted);margin-bottom:14px;line-height:1.55;">Contact our family support team. We aim to respond within 3 business days during the pre-launch period.</p>
+            <a href="mailto:families@edgeneration.org" class="btn btn-primary btn-sm" style="width:100%;text-align:center;">families@edgeneration.org</a>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand-col">
+          <img class="footer-logo" src="edgen-logo-header.png" alt="EdGen" />
+          <p class="footer-tagline">EdGen is a 501(c)(3) Scholarship Granting Organization for the Federal Scholarship Tax Credit, serving Orthodox Jewish families across the United States.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Program</h4>
+          <ul>
+            <li><a href="program.html">How it works</a></li>
+            <li><a href="program.html#ami-map">AMI eligibility map</a></li>
+            <li><a href="program.html#states">Participating states</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About EdGen</a></li>
+            <li><a href="resources.html">Resource library</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Act now</h4>
+          <ul>
+            <li><a href="apply.html">Apply for a scholarship</a></li>
+            <li><a href="donate.html">Make a donation</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-legal">© 2026 EdGen — Education Generation, Inc. · 501(c)(3) · All rights reserved.</p>
+        <span class="footer-prelaunch">Pre-launch — Program launches January 1, 2027</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    const navToggle = document.getElementById('navToggle');
+    const navMobile = document.getElementById('navMobile');
+    navToggle.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      navToggle.classList.toggle('open', isOpen);
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    const mobileDropdownToggle = document.querySelector('.mobile-dropdown-toggle');
+    const mobileAboutSubmenu = document.getElementById('mobileAboutSubmenu');
+    if (mobileDropdownToggle) {
+      mobileDropdownToggle.addEventListener('click', () => {
+        const isOpen = mobileAboutSubmenu.style.display !== 'none';
+        mobileAboutSubmenu.style.display = isOpen ? 'none' : 'block';
+        mobileDropdownToggle.setAttribute('aria-expanded', String(!isOpen));
+      });
+    }
+
+    // Add student section
+    let studentCount = 1;
+    const FSTC_STATES = ['Alabama','Alaska','Arkansas','Colorado','Florida','Georgia','Idaho','Indiana','Iowa','Louisiana','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','North Dakota','Ohio','Oklahoma','South Carolina','South Dakota','Tennessee','Texas','Utah','Virginia','West Virginia','Wyoming'];
+    const GRADES = ['Nursery','Pre-K','Kindergarten','1','2','3','4','5','6','7','8','9','10','11'];
+    const SCHOOL_TYPES = ['Yeshiva','Bais Yaakov','Day School','Other Jewish Day School'];
+
+    function buildStateOptions(selectedVal) {
+      return `<option value="">Select state</option>` +
+        FSTC_STATES.map(s => `<option${s === selectedVal ? ' selected' : ''}>${s}</option>`).join('') +
+        `<option value="other">State not listed</option>`;
+    }
+
+    document.getElementById('addStudentBtn').addEventListener('click', () => {
+      studentCount++;
+      const n = studentCount;
+      const div = document.createElement('div');
+      div.className = 'student-section';
+      div.id = `student-${n}`;
+      div.innerHTML = `
+        <span class="student-section-label">Student ${n}</span>
+        <button type="button" class="remove-student" onclick="this.closest('.student-section').remove()">Remove</button>
+        <div style="display:grid;gap:16px;margin-top:8px;">
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="s${n}-first">First name</label>
+              <input type="text" id="s${n}-first" name="s${n}-first" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="s${n}-last">Last name</label>
+              <input type="text" id="s${n}-last" name="s${n}-last" class="form-input" />
+            </div>
+          </div>
+          <div class="form-grid-3">
+            <div class="form-group">
+              <label for="s${n}-dob">Date of birth</label>
+              <input type="date" id="s${n}-dob" name="s${n}-dob" class="form-input" />
+            </div>
+            <div class="form-group">
+              <label for="s${n}-grade">Current grade</label>
+              <select id="s${n}-grade" name="s${n}-grade" class="form-select">
+                <option value="">Select grade</option>
+                ${GRADES.map(g => `<option>${g}</option>`).join('')}
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="s${n}-type">School type</label>
+              <select id="s${n}-type" name="s${n}-type" class="form-select">
+                <option value="">Select type</option>
+                ${SCHOOL_TYPES.map(t => `<option>${t}</option>`).join('')}
+              </select>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group">
+              <label for="s${n}-school">School name</label>
+              <input type="text" id="s${n}-school" name="s${n}-school" class="form-input" placeholder="Enter school name" />
+            </div>
+            <div class="form-group">
+              <label for="s${n}-schoolState">School state</label>
+              <select id="s${n}-schoolState" name="s${n}-schoolState" class="form-select">
+                ${buildStateOptions('')}
+              </select>
+            </div>
+          </div>
+        </div>`;
+      document.getElementById('studentsContainer').appendChild(div);
+    });
+
+    // Form validation and submission
+    function setError(id, msg) {
+      const el = document.getElementById('err-' + id);
+      if (!el) return;
+      el.textContent = msg;
+      const input = document.getElementById(id) || document.querySelector(`[name="${id}"]`);
+      if (input) input.classList.toggle('error', !!msg);
+    }
+    function clearErrors() {
+      document.querySelectorAll('.form-error').forEach(el => el.textContent = '');
+      document.querySelectorAll('.form-input.error, .form-select.error').forEach(el => el.classList.remove('error'));
+    }
+
+    function validate() {
+      clearErrors();
+      let ok = true;
+      const v = (id, msg) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const val = (el.type === 'checkbox') ? el.checked : el.value.trim();
+        if (!val) { setError(id, msg); ok = false; }
+      };
+      v('parentFirst', 'Please enter your first name.');
+      v('parentLast', 'Please enter your last name.');
+      const emailEl = document.getElementById('parentEmail');
+      if (!emailEl.value.trim()) { setError('parentEmail', 'Please enter your email address.'); ok = false; }
+      else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) { setError('parentEmail', 'Please enter a valid email address.'); ok = false; }
+      v('parentState', 'Please select your home state.');
+      v('filingStatus', 'Please select your filing status.');
+      const s1first = document.getElementById('s1-first');
+      if (s1first && !s1first.value.trim()) { setError('s1-first', 'Please enter the student\'s first name.'); ok = false; }
+      const s1last = document.getElementById('s1-last');
+      if (s1last && !s1last.value.trim()) { setError('s1-last', 'Please enter the student\'s last name.'); ok = false; }
+      const agiEl = document.getElementById('estimatedAGI');
+      if (!agiEl.value.trim()) { setError('estimatedAGI', 'Please enter an estimated household AGI.'); ok = false; }
+      v('ivesAck', 'Please acknowledge income verification.');
+      v('ack1', 'Required.'); v('ack2', 'Required.'); v('ack3', 'Required.'); v('ack4', 'Required.');
+      return ok;
+    }
+
+    document.getElementById('applicationForm').addEventListener('submit', e => {
+      e.preventDefault();
+      if (!validate()) {
+        document.querySelector('.form-error:not(:empty)')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+      const email = document.getElementById('parentEmail').value.trim();
+      document.getElementById('successEmail').textContent = email;
+      document.getElementById('applicationForm').style.display = 'none';
+      const sc = document.getElementById('successCard');
+      sc.classList.add('visible');
+      sc.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  </script>
+</body>
+</html>
