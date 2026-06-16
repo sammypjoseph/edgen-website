@@ -783,22 +783,8 @@ p { line-height: 1.7; }
   flex-shrink: 0;
 }
 
-.edgen-ami-map-tooltip {
-  position: absolute;
-  background: var(--navy);
-  color: white;
-  border-radius: var(--radius);
-  padding: 12px 16px;
-  font-size: 13px;
-  line-height: 1.5;
-  pointer-events: none;
-  box-shadow: var(--shadow);
-  max-width: 220px;
-  z-index: 10;
-  display: none;
-}
-.edgen-ami-map-tooltip.visible { display: block; }
-.edgen-ami-map-tooltip strong { display: block; font-size: 14px; color: var(--gold); margin-bottom: 4px; }
+/* .edgen-ami-map-tooltip is fully controlled by edgen-ami-map.css via opacity transitions —
+   do not set display:none here as it overrides the JS hover events */
 
 .edgen-ami-map-info {
   width: 240px;
@@ -945,6 +931,13 @@ p { line-height: 1.7; }
   font-size: 12px;
   color: #d94040;
   font-weight: 500;
+}
+.form-hint {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+  display: block;
+  margin-top: 4px;
 }
 
 .form-select {
