@@ -108,7 +108,7 @@ fieldset { border: none; }
 }
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand-logo { height: 36px; width: auto; object-fit: contain; }
+.brand-logo { height: 44px; width: auto; display: block; background: none; border: none; }
 
 /* Primary nav */
 .nav {
@@ -1227,7 +1227,7 @@ p { line-height: 1.7; }
   padding-bottom: clamp(48px, 5vw, 72px);
 }
 .footer-brand-col { display: flex; flex-direction: column; gap: 16px; }
-.footer-logo { height: 32px; width: auto; opacity: 0.9; }
+.footer-logo { height: 40px; width: auto; display: block; background: none; border: none; }
 .footer-tagline { font-size: 14px; line-height: 1.6; max-width: 280px; }
 .footer-col h4 {
   font-family: var(--font-body);
