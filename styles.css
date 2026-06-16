@@ -108,7 +108,7 @@ fieldset { border: none; }
 }
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand-logo { height: 44px; width: auto; display: block; background: none; border: none; }
+.brand-logo { height: 40px; width: auto; display: block; background: none; border: none; }
 
 /* Primary nav */
 .nav {
