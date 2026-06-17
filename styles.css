@@ -104,11 +104,11 @@ fieldset { border: none; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 90px;
+  height: 130px;
 }
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand-logo { height: 56px; width: auto; }
+.brand-logo { width: 312px; height: auto; }
 
 /* Primary nav */
 .nav {
@@ -243,7 +243,7 @@ fieldset { border: none; }
 .nav-mobile {
   display: none;
   position: fixed;
-  top: 90px;
+  top: 130px;
   left: 0;
   right: 0;
   background: var(--white);
