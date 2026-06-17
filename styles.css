@@ -104,11 +104,11 @@ fieldset { border: none; }
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  height: 88px;
+  height: 120px;
 }
 
 .brand { display: flex; align-items: center; flex-shrink: 0; }
-.brand-logo { height: 56px; width: auto; }
+.brand-logo { height: 92px; width: auto; }
 
 /* Primary nav */
 .nav {
@@ -1227,10 +1227,9 @@ p { line-height: 1.7; }
   padding-bottom: clamp(48px, 5vw, 72px);
 }
 .footer-brand-col { display: flex; flex-direction: column; gap: 16px; }
-.footer-logo { height: 48px; width: auto; }
-.footer-brand-link { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; }
-.footer-brand-name { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: white; letter-spacing: -0.01em; line-height: 1; }
-.footer-tagline { font-size: 14px; line-height: 1.6; max-width: 280px; }
+.footer-logo { width: 100%; height: auto; }
+.footer-brand-link { display: block; text-decoration: none; }
+.footer-tagline { font-size: 14px; line-height: 1.6; }
 .footer-col h4 {
   font-family: var(--font-body);
   font-size: 12px;
